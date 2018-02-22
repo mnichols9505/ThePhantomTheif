@@ -26,7 +26,7 @@
          <font>
             <Font size="42.0" />
          </font></Button>
-      <Button layoutX="353.0" layoutY="463.0" mnemonicParsing="false" text="Tutorial" textAlignment="CENTER">
+      <Button layoutX="353.0" layoutY="463.0" mnemonicParsing="false" text="Tutorial" onMouseClicked="#tutorialClick" textAlignment="CENTER">
          <font>
             <Font size="41.0" />
          </font></Button>
