@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.TutorialScreen"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600" prefWidth="900" style="-fx-background-color: #280D4B;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.TutorialScreen">
+   <children>
+      <Button layoutX="694.0" layoutY="496.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="167.0" text="Back" />
+      <ImageView fitHeight="100.0" fitWidth="523.0" layoutX="280.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Users/Ashley/Downloads/Tutorial%20Image.PNG" />
+         </image></ImageView>
+      <ImageView fitHeight="117.0" fitWidth="149.0" layoutX="64.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Users/Ashley/Downloads/fram.jpg" />
+         </image>
+      </ImageView>
+      <TextArea layoutX="249.0" layoutY="164.0" prefHeight="117.0" prefWidth="593.0" style="-fx-background-color: #280D4B;" text="These are the items you must collect.&#10;Each item is worth a different amount." />
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
 </AnchorPane>
