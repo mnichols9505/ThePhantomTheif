@@ -1,5 +1,6 @@
 package edu.neumont.csc150.Controller;
 
+import edu.neumont.csc150.Screen.StartScreen;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,18 +9,16 @@ import javafx.stage.Stage;
 
 public class Start extends Application {
 
+    static Stage startstage = new Stage();
     public static void main(String[] args) {
         Application.launch(Start.class, args);
     }
 
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/startmenu.fxml"));
 
-        Scene scene = new Scene(root);
+        StartScreen sc = new StartScreen();
+        sc.start(startstage);
 
-        stage.setScene(scene);
-        stage.setTitle("The Phantom Thief");
-        stage.show();
 
     }
 }

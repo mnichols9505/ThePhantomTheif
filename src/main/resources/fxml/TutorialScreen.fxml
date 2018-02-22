@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="900" style="-fx-background-color: #280D4B;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Controller.Start">
+<AnchorPane prefHeight="600" prefWidth="900" style="-fx-background-color: #280D4B;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Screen.Tutorial">
    <children>
-      <Button layoutX="709.0" layoutY="513.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="167.0" text="Back" textOverrun="CENTER_ELLIPSIS">
+      <Button fx:id="backButton" onMouseClicked="#backbuttons" layoutX="709.0" layoutY="513.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="167.0" text="Back" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font size="24.0" />
          </font></Button>
