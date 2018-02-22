@@ -20,6 +20,12 @@
          </image>
       </ImageView>
       <TextArea layoutX="249.0" layoutY="164.0" prefHeight="117.0" prefWidth="593.0" style="-fx-background-color: #280D4B;" text="These are the items you must collect.&#10;Each item is worth a different amount." />
+      <ImageView fitHeight="119.0" fitWidth="137.0" layoutX="64.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/controllers.jpg" />
+         </image>
+      </ImageView>
+      <TextArea layoutX="249.0" layoutY="306.0" prefHeight="131.0" prefWidth="593.0" text="Use the Arrow Keys to move around &#10;and the Space bar to pick up Items.&#10;" />
    </children>
    <opaqueInsets>
       <Insets />
