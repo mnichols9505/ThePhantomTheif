@@ -12,11 +12,11 @@
       <Button layoutX="694.0" layoutY="496.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="167.0" text="Back" />
       <ImageView fitHeight="100.0" fitWidth="523.0" layoutX="280.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Users/Ashley/Downloads/Tutorial%20Image.PNG" />
+            <Image url="@../Images/TutorialImage.PNG" />
          </image></ImageView>
       <ImageView fitHeight="117.0" fitWidth="149.0" layoutX="64.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Users/Ashley/Downloads/fram.jpg" />
+            <Image url="@../Images/fram.jpg" />
          </image>
       </ImageView>
       <TextArea layoutX="249.0" layoutY="164.0" prefHeight="117.0" prefWidth="593.0" style="-fx-background-color: #280D4B;" text="These are the items you must collect.&#10;Each item is worth a different amount." />
