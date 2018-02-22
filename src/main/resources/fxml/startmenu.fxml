@@ -22,7 +22,7 @@
             <Image url="@../Images/The%20PhantomThief%20Title_Transparent.png" />
          </image>
       </ImageView>
-      <Button layoutX="379.0" layoutY="342.0" mnemonicParsing="false" text="Start" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+      <Button fx:id="button" layoutX="379.0" layoutY="342.0" mnemonicParsing="false" text="Start" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
          <font>
             <Font size="42.0" />
          </font></Button>
