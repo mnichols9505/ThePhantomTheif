@@ -18,7 +18,7 @@ public class Start extends Application {
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
-        stage.setTitle("The Phantom Theif");
+        stage.setTitle("The Phantom Thief");
         stage.show();
 
     }
