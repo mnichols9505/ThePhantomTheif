@@ -1,4 +1,6 @@
 package edu.neumont.csc150.Character;
 
-public class CharacterPickUp {
+public class CharacterPickUp{
+
+
 }
