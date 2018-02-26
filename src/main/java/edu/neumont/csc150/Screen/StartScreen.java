@@ -57,7 +57,6 @@ public class StartScreen extends Application{
 
         tutorial.start(Tutorial.tutstage);
 
-
     }
 
 }
