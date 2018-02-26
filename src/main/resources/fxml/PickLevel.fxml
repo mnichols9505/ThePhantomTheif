@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            style="-fx-background-color: #280D4B;"
-            fx:controller="fxml.PickLevel"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600" prefWidth="900.0" style="-fx-background-color: #280D4B;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.PickLevel">
+   <children>
+      <Button layoutX="284.0" layoutY="197.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="277.0" text="Cyanide">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button layoutX="284.0" layoutY="359.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="277.0" text="Polonium">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+       <Text>Easy </Text>
+   </children>
 </AnchorPane>
