@@ -29,11 +29,16 @@ public void draw(){
 }
 
 
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/Gameplay.fxml"));
 
         Scene scene = new Scene(root);
+
+        Gamestage = stage;
+
         Gamestage.setScene(scene);
+        Gamestage.setTitle("The Phantom Thief");
+        Gamestage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
         Gamestage.show();
 
         draw();
