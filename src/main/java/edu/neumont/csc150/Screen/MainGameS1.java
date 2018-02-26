@@ -1,5 +1,9 @@
 package edu.neumont.csc150.Screen;
 
+import edu.neumont.csc150.Character.CharacterMove;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,28 +13,19 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class MainGameS1 extends Application {
 
-@FXML
-    private Canvas mainCanvas;
-
-private int x = 0, y= 0, ballwidth = 10, ballheight = 10;
-private int volx = 0, voly = 0;
-static Stage Gamestage = new Stage();
-
-public void draw(){
-
-    GraphicsContext gc = mainCanvas.getGraphicsContext2D();
-    gc.setFill(Color.AQUA);
-    gc.fillOval(x,y,ballwidth,ballheight);
-
-}
+    static Stage Gamestage = new Stage();
 
 
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/Gameplay.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/Gameplay.fxml"));
+        Parent root = loader.load();
 
         Scene scene = new Scene(root);
 
@@ -41,7 +36,14 @@ public void draw(){
         Gamestage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
         Gamestage.show();
 
-        draw();
+        CharacterMove dude = loader.getController();
+        dude.init();
 
     }
-}
+
+
+
+
+
+    }
+
