@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,5 +15,6 @@
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6340c9" height="104.0" layoutX="549.0" layoutY="482.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="4.0" width="361.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#597794" height="113.0" layoutX="727.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="7.0" width="200.0" />
+      <Canvas fx:id="mainCanvas" height="455.0" layoutX="38.0" layoutY="22.0" width="841.0" />
    </children>
 </AnchorPane>
