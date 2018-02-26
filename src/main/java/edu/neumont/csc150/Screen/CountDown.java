@@ -1,14 +1,15 @@
 package edu.neumont.csc150.Screen;
 
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class CountDown {
-    Timer timer = new Timer();
-    TimerTask runout = new TimerTask() {
-        @Override
-        public void run() {
-                cancel();
-        }
-    };
+public class CountDown extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+    }
 }
