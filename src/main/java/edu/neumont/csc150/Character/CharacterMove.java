@@ -5,6 +5,7 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
@@ -33,4 +34,10 @@ public class CharacterMove {
 
     }
 
+
+    public void handle(KeyEvent e) {
+
+        if(e.getEventType() == KeyEvent. )
+
+    }
 }

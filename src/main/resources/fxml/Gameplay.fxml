@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.canvas.Canvas?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Character.CharacterMove">
-   <Canvas  fx:id= "mainCanvas" width="900" height="600" />
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Character.CharacterMove">
+   <Canvas fx:id="mainCanvas" height="600" onKeyTyped="#handle" width="900" />
 </AnchorPane>
