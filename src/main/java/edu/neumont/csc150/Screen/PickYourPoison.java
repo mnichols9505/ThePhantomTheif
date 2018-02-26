@@ -48,8 +48,8 @@ public class PickYourPoison extends Application{
     public void gameClickHard(MouseEvent event) throws Exception {
 
         Stage stage = (Stage) gameButton.getScene().getWindow();
-        CountDown easy = new CountDown();
-        easy.setPoison(false);
+        CountDown hard = new CountDown();
+        hard.setPoison(false);
         stage.close();
         MainGameS1 game= new MainGameS1();
         game.start(MainGameS1.Gamestage);
