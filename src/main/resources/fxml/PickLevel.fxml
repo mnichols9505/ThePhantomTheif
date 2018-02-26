@@ -9,12 +9,12 @@
 
 <AnchorPane prefHeight="600" prefWidth="900.0" style="-fx-background-color: #280D4B;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Screen.PickYourPoison">
    <children>
-      <Button layoutX="312.0" layoutY="259.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="277.0" text="Cyanide">
+      <Button fx:id="gameButton" onMouseClicked="#gameClick" layoutX="312.0" layoutY="259.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="277.0" text="Cyanide">
          <font>
             <Font size="32.0" />
          </font>
       </Button>
-      <Button fx:id="gameButton" onMouseClicked="#gameClick" layoutX="312.0" layoutY="428.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="277.0" text="Polonium">
+      <Button fx:id="gameButton1" onMouseClicked="#gameClickHard" layoutX="312.0" layoutY="428.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="277.0" text="Polonium">
          <font>
             <Font size="32.0" />
          </font>
