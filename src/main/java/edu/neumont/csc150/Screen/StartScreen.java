@@ -33,6 +33,19 @@ public class StartScreen extends Application{
     }
 
     @FXML
+    Button startButton;
+
+    @FXML
+    public void startClick(MouseEvent event) throws Exception {
+
+        Stage stage = (Stage) startButton.getScene().getWindow();
+        stage.close();
+        PickYourPoison poison = new PickYourPoison();
+        poison.start(PickYourPoison.poison);
+
+    }
+
+    @FXML
     Button button;
 
     @FXML
