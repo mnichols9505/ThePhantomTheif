@@ -41,7 +41,7 @@ public class StartScreen extends Application{
         Stage stage = (Stage) startButton.getScene().getWindow();
         stage.close();
         PickYourPoison poison = new PickYourPoison();
-        poison.start(PickYourPoison.poison);
+        poison.start(PickYourPoison.levelPick);
 
     }
 

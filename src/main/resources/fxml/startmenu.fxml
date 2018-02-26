@@ -22,11 +22,11 @@
             <Image url="@../Images/The%20PhantomThief%20Title_Transparent.png" />
          </image>
       </ImageView>
-      <Button fx:id="button" layoutX="379.0" layoutY="342.0" mnemonicParsing="false" text="Start" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+      <Button fx:id="startButton" onMouseClicked="#startClick" layoutX="379.0" layoutY="342.0" mnemonicParsing="false" text="Start" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
          <font>
             <Font size="42.0" />
          </font></Button>
-      <Button layoutX="353.0" layoutY="463.0" mnemonicParsing="false" onMouseClicked="#tutorialClick" text="Tutorial" textAlignment="CENTER">
+      <Button fx:id="button" layoutX="353.0" layoutY="463.0" mnemonicParsing="false" text="Tutorial" onMouseClicked="#tutorialClick" textAlignment="CENTER">
          <font>
             <Font size="41.0" />
          </font></Button>
