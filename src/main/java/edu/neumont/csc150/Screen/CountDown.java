@@ -1,34 +1,33 @@
 package edu.neumont.csc150.Screen;
 
 import javafx.animation.AnimationTimer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 public class CountDown extends Application {
     private boolean poison;
-    private int seconds;
-    private AnimationTimer timer;
-    private Duration duration;
-    private long lastTimerCall;
-
-    public int getSeconds() {
-        return seconds;
-    }
-
-    public void setSeconds(int seconds) {
-        this.seconds = seconds;
-    }
+    private Integer start = 30;
+    private Integer seconds = start;
+    private Label label;
 
 
     public boolean isPoison() {
@@ -39,33 +38,50 @@ public class CountDown extends Application {
         this.poison = poison;
     }
 
-    public void create() {
-        timer = new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                if (now > lastTimerCall + 30) {
-                    duration = duration.subtract(Duration.seconds(1));
+    @Override
+    public void start(Stage stage) throws Exception {
+        Group root = new Group();
+        label = new Label();
+        label.setTextFill(Color.WHITESMOKE);
+        label.setFont(Font.font(22));
 
-                    int remainingSeconds = (int) duration.toSeconds();
-                }
-            }
 
-        };
+        HBox hbox = new HBox(5);
+        hbox.getChildren().add(label);
+        hbox.setLayoutX(48);
+        root.getChildren().add(hbox);
+        doTime();
+
+        stage.setScene(new Scene(root, 300,70,Color.BLUEVIOLET));
+        stage.show();
     }
-            public void start(Stage stage) throws Exception {
-                HBox hbox = new HBox(seconds);
-                hbox.setBackground(new Background(new BackgroundFill(Color.web("#CCCCFF"), CornerRadii.EMPTY, Insets.EMPTY)));
-                hbox.setPadding(new Insets(10));
 
-                Scene scene = new Scene(hbox);
+    private void doTime() {
+        Timeline time = new Timeline();
+        time.setCycleCount(Timeline.INDEFINITE);
+            if(time!= null){
+                time.stop();
+        }
+        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                    seconds--;
 
-                stage.setScene(scene);
-                stage.show();
 
-                timer.start();
+                    label.setText("Countdown: "+seconds.toString());
+                     if(seconds<=0){
+                         time.stop();
+                         Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                         alert.setHeaderText("BOOM!");
+
+                     }
             }
+        });
 
-
-
-
+            time.getKeyFrames().add(frame);
+            time.playFromStart();
+    }
+    public static void main(String[] args){
+        Application.launch(CountDown.class, args);
+    }
 }
