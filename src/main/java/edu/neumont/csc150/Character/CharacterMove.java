@@ -2,6 +2,7 @@ package edu.neumont.csc150.Character;
 
 import com.sun.webkit.dom.KeyboardEventImpl;
 import edu.neumont.csc150.Items.Sell;
+import edu.neumont.csc150.Screen.CountDown;
 import javafx.animation.KeyFrame;
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
@@ -23,18 +24,22 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @FXML
     private Canvas mainCanvas;
 
-    private int ballx = 50,bally = 50,ballwidth =50,ballheight=50;
+    private int ballx = 460,bally = 560,ballwidth =50,ballheight=50;
 
-    private int vX = 8 , vY = 8;
+    private int vX = 20 , vY = 20;
 
     Sell sell = new Sell();
+    CountDown time = new CountDown();
 
     @FXML
     private Label money;
+    @FXML
+    private Label count;
 
     @FXML
     private void initialize() {
         money.setText(String.valueOf(sell.sumValue()));
+       // count.setText(time.doTime());
     }
 
     public void init() {
@@ -58,23 +63,27 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
+    public void checkbounce(){
+
+
+    }
     @Override
     public void handle(KeyEvent e) {
             if(e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
                 System.out.println("UP key was pressed");
-                bally -=20;
+                bally -=vY;
             }
             if(e.getCode().equals(KeyCode.DOWN)|| e.getCode().equals(KeyCode.S)){
                 System.out.println("Down key was pressed");
-                bally +=20;
+                bally +=vY;
             }
              if(e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)){
             System.out.println("Left key was pressed");
-                ballx-=20;
+                ballx-=vX;
             }
              if(e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)){
             System.out.println("Right key was pressed");
-                ballx+=20;
+                ballx+=vX;
             }
 
 

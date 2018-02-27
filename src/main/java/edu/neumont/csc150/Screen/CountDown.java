@@ -56,7 +56,7 @@ public class CountDown extends Application {
         stage.show();
     }
 
-    private void doTime() {
+    public String doTime() {
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
             if(time!= null){
@@ -68,10 +68,10 @@ public class CountDown extends Application {
                     seconds--;
 
 
-                    label.setText("Countdown: "+seconds.toString());
+                     label.setText("Countdown: "+seconds.toString());
                      if(seconds<=0){
                          time.stop();
-                         Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                        Alert alert= new Alert(Alert.AlertType.INFORMATION);
                          alert.setHeaderText("BOOM!");
                          alert.show();
 
@@ -81,6 +81,8 @@ public class CountDown extends Application {
 
             time.getKeyFrames().add(frame);
             time.playFromStart();
+
+            return seconds.toString();
     }
     public static void main(String[] args){
         Application.launch(CountDown.class, args);
