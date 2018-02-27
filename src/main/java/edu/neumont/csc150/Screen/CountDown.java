@@ -1,20 +1,16 @@
 package edu.neumont.csc150.Screen;
 
-import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -25,7 +21,7 @@ import javafx.util.Duration;
 
 public class CountDown extends Application {
     private boolean poison;
-    private Integer start = 30;
+    private Integer start = 10;
     private Integer seconds = start;
     private Label label;
 
@@ -40,6 +36,10 @@ public class CountDown extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("Gameplay.fxml")
+        );
+
         Group root = new Group();
         label = new Label();
         label.setTextFill(Color.WHITESMOKE);
@@ -73,6 +73,7 @@ public class CountDown extends Application {
                          time.stop();
                          Alert alert= new Alert(Alert.AlertType.INFORMATION);
                          alert.setHeaderText("BOOM!");
+                         alert.show();
 
                      }
             }
