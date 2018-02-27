@@ -14,7 +14,8 @@ public class Money extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        money = 3084;
+        money.set;
+
 
     }
 }

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Character.CharacterMove">
    <Canvas fx:id="mainCanvas" height="600" layoutX="-6.0" layoutY="-17.0" width="920.0" />
-   <Pane layoutX="672.0" layoutY="503.0" prefHeight="66.0" prefWidth="230.0" />
-   <Pane  layoutX="750.0" layoutY="14.0" prefHeight="60.0" prefWidth="150.0" />
+   <Pane layoutX="672.0" layoutY="503.0" prefHeight="66.0" prefWidth="230.0">
+      <children>
+         <Label prefHeight="66.0" prefWidth="115.0" text="Money: " />
+         <Label fx:id="money" layoutX="115.0" prefHeight="66.0" prefWidth="115.0"  />
+      </children></Pane>
+   <Pane layoutX="750.0" layoutY="14.0" prefHeight="60.0" prefWidth="150.0" />
 </AnchorPane>
