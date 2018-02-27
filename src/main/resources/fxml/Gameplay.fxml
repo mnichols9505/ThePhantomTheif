@@ -4,5 +4,5 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Character.CharacterMove">
-   <Canvas fx:id="mainCanvas" height="600" onKeyPressed="#handle" width="900" />
+   <Canvas fx:id="mainCanvas" height="600" layoutX="-6.0" layoutY="-17.0" width="920.0" />
 </AnchorPane>

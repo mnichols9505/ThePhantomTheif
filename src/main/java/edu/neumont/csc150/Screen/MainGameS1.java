@@ -24,20 +24,27 @@ public class MainGameS1 extends Application {
 
 
     public void start(Stage stage) throws Exception {
+
+
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/Gameplay.fxml"));
         Parent root = loader.load();
+
 
         Scene scene = new Scene(root);
 
         Gamestage = stage;
-
         Gamestage.setScene(scene);
         Gamestage.setTitle("The Phantom Thief");
         Gamestage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
         Gamestage.show();
 
         CharacterMove dude = loader.getController();
+        scene.setOnKeyPressed(dude);
         dude.init();
+
+
+
+
 
     }
 
