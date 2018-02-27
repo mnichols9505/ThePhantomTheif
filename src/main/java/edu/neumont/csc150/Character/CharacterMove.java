@@ -44,21 +44,21 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     @Override
     public void handle(KeyEvent e) {
-            if(e.getCode().equals(KeyCode.UP)) {
+            if(e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
                 System.out.println("UP key was pressed");
-                bally -=10;
+                bally -=20;
             }
-            if(e.getCode().equals(KeyCode.DOWN)){
+            if(e.getCode().equals(KeyCode.DOWN)|| e.getCode().equals(KeyCode.S)){
                 System.out.println("Down key was pressed");
-                bally +=10;
+                bally +=20;
             }
-             if(e.getCode().equals(KeyCode.LEFT)){
+             if(e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)){
             System.out.println("Left key was pressed");
-                ballx-=10;
+                ballx-=20;
             }
-             if(e.getCode().equals(KeyCode.RIGHT)){
+             if(e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)){
             System.out.println("Right key was pressed");
-                ballx+=10;
+                ballx+=20;
             }
 
 
