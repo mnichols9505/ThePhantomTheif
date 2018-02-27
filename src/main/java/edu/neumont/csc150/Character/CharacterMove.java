@@ -19,7 +19,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @FXML
     private Canvas mainCanvas;
 
-    private int ballx = 50,bally = 50,ballwidth =80,ballheight=80;
+    private int ballx = 50,bally = 50,ballwidth =50,ballheight=50;
 
     private int vX = 8 , vY = 8;
 
