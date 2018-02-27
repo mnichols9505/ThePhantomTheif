@@ -1,17 +1,21 @@
 package edu.neumont.csc150.Character;
 
 import com.sun.webkit.dom.KeyboardEventImpl;
+import edu.neumont.csc150.Items.Sell;
 import javafx.animation.KeyFrame;
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
+import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class CharacterMove implements EventHandler <KeyEvent> {
@@ -23,12 +27,24 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     private int vX = 8 , vY = 8;
 
+    Sell sell = new Sell();
+
+    @FXML
+    private Label money;
+
+    @FXML
+    private void initialize() {
+        money.setText(String.valueOf(sell.sumValue()));
+    }
+
     public void init() {
         Timeline timer = new Timeline(new KeyFrame(Duration.millis(10), e -> draw()));
 
         timer.setCycleCount(Timeline.INDEFINITE);
         timer.play();
     }
+
+
 
     public void draw() {
         GraphicsContext gc = mainCanvas.getGraphicsContext2D();
