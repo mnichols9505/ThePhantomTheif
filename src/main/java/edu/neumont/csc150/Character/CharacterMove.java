@@ -1,8 +1,8 @@
 package edu.neumont.csc150.Character;
 
-import com.sun.webkit.dom.KeyboardEventImpl;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -10,6 +10,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+
+import java.beans.EventHandler;
 
 public class CharacterMove {
 
@@ -40,22 +42,29 @@ public class CharacterMove {
 
     }
 
+    public void handle(ActionEvent event) {
 
-    public void handle(KeyEvent e) {
-
-        if(e.getCode() == KeyCode.S ){
-            vY+=1;
-            System.out.println("pressed");
-        }
-        if(e.getCode().equals(KeyCode.DOWN)){
-            vY-=1;
-        }
-        if(e.getCode().equals(KeyCode.LEFT)){
-            vX-=1;
-        }
-        if(e.getCode().equals(KeyCode.RIGHT)){
-            vX+=1;
+        if (!(event.getSource() != KeyCode.LEFT)) {
+            System.out.println("left pressed");
         }
 
     }
+
+    //    public void handle(KeyEvent e) {
+//
+//        if(e.getCode() == KeyCode.S ){
+//            vY+=1;
+//            System.out.println("pressed");
+//        }
+//        if(e.getCode().equals(KeyCode.DOWN)){
+//            vY-=1;
+//        }
+//        if(e.getCode().equals(KeyCode.LEFT)){
+//            vX-=1;
+//        }
+//        if(e.getCode().equals(KeyCode.RIGHT)){
+//            vX+=1;
+//        }
+//
+//    }
 }
