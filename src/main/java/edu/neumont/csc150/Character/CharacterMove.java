@@ -64,7 +64,12 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     }
 
     public void checkbounce(){
-
+        if(bally + ballheight >= this.mainCanvas.getHeight() || bally <=0){
+          //  vY=0;
+        }
+        if(ballx + ballwidth >= this.mainCanvas.getWidth() || ballx <= 0){
+           // vX =0;
+        }
 
     }
     @Override
@@ -72,6 +77,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             if(e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
                 System.out.println("UP key was pressed");
                 bally -=vY;
+                this.checkbounce();
             }
             if(e.getCode().equals(KeyCode.DOWN)|| e.getCode().equals(KeyCode.S)){
                 System.out.println("Down key was pressed");
