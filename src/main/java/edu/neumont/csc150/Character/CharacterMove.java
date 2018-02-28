@@ -18,7 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -38,8 +38,12 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     private CharacterPickUp items = new CharacterPickUp();
 
+    private Image exit = new Image("Images/Exit.png",164,45,true,true);
+
     @FXML
     private Label money;
+
+
 
 //    @FXML
 //    private ImageView one;
@@ -70,11 +74,16 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     public void draw() {
         GraphicsContext gc = mainCanvas.getGraphicsContext2D();
 
-        gc.setFill(Color.WHITE);
+        gc.setFill();
         gc.fillRect(0,0,this.mainCanvas.getWidth(),this.mainCanvas.getHeight());
+
+        gc.drawImage(exit,410,536);
 
         gc.setFill(Color.BLUE);
         gc.fillOval(ballx,bally,ballwidth,ballheight);
+
+
+
 
 //        one.setImage(items.getItems().get(0).getImage());
 //        two.setImage(items.getItems().get(1).getImage());
