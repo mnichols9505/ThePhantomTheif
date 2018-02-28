@@ -135,7 +135,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             bally = bally - vY;
             return true;
         }
-        if (ballx + ballwidth >= this.mainCanvas.getWidth()|| ballx + ballwidth <= ){
+        if (ballx + ballwidth >= this.mainCanvas.getWidth()){
             ballx = ballx - vX;
             return true;
         }
@@ -203,6 +203,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
         if(e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
             System.out.println("Space key was pressed");
+
 
         }
 
