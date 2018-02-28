@@ -19,8 +19,20 @@ public class CharacterPickUp{
         items.add(new CoxPainting());
         items.add(new Vase());
         items.add(new Statue());
+        items.add(new Vase());
+        items.add(new Painting());
         items.add(new Sculpture());
-//        items.add(new Painting());
+        items.add(new Vase());
+        items.add(new Painting());
+        items.add(new Vase());
+        items.add(new Sculpture());
+        items.add(new Vase());
+        items.add(new Vase());
+        items.add(new Painting());
+
+        //6 vases 3 painting 2 sculpture 1 statue
+
+
 
     }
 

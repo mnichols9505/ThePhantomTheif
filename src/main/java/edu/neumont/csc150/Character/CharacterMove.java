@@ -47,14 +47,32 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @FXML
     private Label moneytwo;
 
-//    @FXML
-//    private ImageView one;
-//    @FXML
-//    private ImageView two;
-//    @FXML
-//    private ImageView three;
-//    @FXML
-//    private ImageView four;
+    @FXML
+    private ImageView one;
+    @FXML
+    private ImageView two;
+    @FXML
+    private ImageView three;
+    @FXML
+    private ImageView four;
+    @FXML
+    private ImageView five;
+    @FXML
+    private ImageView six;
+    @FXML
+    private ImageView seven;
+    @FXML
+    private ImageView eight;
+    @FXML
+    private ImageView nine;
+    @FXML
+    private ImageView ten;
+    @FXML
+    private ImageView eleven;
+    @FXML
+    private ImageView twelve;
+    @FXML
+    private ImageView thirteen;
 
 
     @FXML
@@ -91,10 +109,21 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
 
 
-//        one.setImage(items.getItems().get(0).getImage());
-//        two.setImage(items.getItems().get(1).getImage());
-//        three.setImage(items.getItems().get(2).getImage());
-//        four.setImage(items.getItems().get(3).getImage());
+        one.setImage(items.getItems().get(0).getImage());
+        two.setImage(items.getItems().get(1).getImage());
+        three.setImage(items.getItems().get(2).getImage());
+        four.setImage(items.getItems().get(3).getImage());
+        five.setImage(items.getItems().get(4).getImage());
+        six.setImage(items.getItems().get(5).getImage());
+        seven.setImage(items.getItems().get(6).getImage());
+        eight.setImage(items.getItems().get(7).getImage());
+        nine.setImage(items.getItems().get(8).getImage());
+        ten.setImage(items.getItems().get(9).getImage());
+        eleven.setImage(items.getItems().get(10).getImage());
+        twelve.setImage(items.getItems().get(11).getImage());
+        thirteen.setImage(items.getItems().get(12).getImage());
+
+
 
 
     }
