@@ -106,7 +106,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             bally = bally - vY;
             return true;
         }
-        if (ballx + ballwidth >= this.mainCanvas.getWidth()){
+        if (ballx + ballwidth >= this.mainCanvas.getWidth()|| ballx + ballwidth <= ){
             ballx = ballx - vX;
             return true;
         }
