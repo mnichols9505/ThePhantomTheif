@@ -44,7 +44,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @FXML
     private Label money;
 
-
+    @FXML
+    private Label moneytwo;
 
 //    @FXML
 //    private ImageView one;
@@ -58,6 +59,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     @FXML
     private void initialize() {
+        moneytwo.setStyle("-fx-font: 26 arial;");
+        moneytwo.setText("Money: ");
+        moneytwo.setTextFill(Color.WHITESMOKE);
         money.setText(String.valueOf(sell.sumValue()));
         money.setTextFill(Color.GREEN);
         money.setStyle("-fx-font: 26 arial;");

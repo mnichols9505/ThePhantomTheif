@@ -20,7 +20,7 @@
 
    <Pane layoutX="672.0" layoutY="503.0" prefHeight="66.0" prefWidth="230.0">
       <children>
-         <Label prefHeight="66.0" prefWidth="115.0" text="Money: " />
+         <Label fx:id="moneytwo" prefHeight="66.0" prefWidth="115.0"  />
          <Label fx:id="money" layoutX="115.0" prefHeight="66.0" prefWidth="115.0" />
       </children></Pane>
    <Pane layoutX="750.0" layoutY="14.0" prefHeight="60.0" prefWidth="150.0" />
