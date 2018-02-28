@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 public class PickYourPoison extends Application{
 
     static Stage levelPick = new Stage();
+    MainGameS1 mg = new MainGameS1();
 
 
     public void start(Stage stage) throws Exception {
@@ -43,6 +44,8 @@ public class PickYourPoison extends Application{
         MainGameS1 game= new MainGameS1();
         game.start(MainGameS1.Gamestage);
 
+        mg.doTime();
+
     }
 
     public void gameClickHard(MouseEvent event) throws Exception {
@@ -54,5 +57,6 @@ public class PickYourPoison extends Application{
         MainGameS1 game= new MainGameS1();
         game.start(MainGameS1.Gamestage);
 
+        mg.doHardTime();
     }
 }
