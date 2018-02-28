@@ -9,6 +9,7 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Bounds;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
@@ -50,7 +51,6 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     }
 
 
-
     public void draw() {
         GraphicsContext gc = mainCanvas.getGraphicsContext2D();
 
@@ -64,17 +64,30 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     }
 
     public boolean checkbounce(){
-        if(bally + ballheight >= this.mainCanvas.getHeight() || bally <=0){
-            vY*=-1;
+        if (bally + ballheight >= this.mainCanvas.getHeight()){
+            bally = bally - vY;
             return true;
         }
-        if(ballx + ballwidth >= this.mainCanvas.getWidth() || ballx <= 0){
-            vX *=-1;
+        if (ballx + ballwidth >= this.mainCanvas.getWidth()){
+            ballx = ballx - vX;
+            return true;
+        }
+        if(bally <=0){
+//            vY*=-1;
+            bally *= 0;
+            return true;
+        }
+        if(ballx <= 0){
+//            vX *=-1;
+            ballx *= 0;
             return true;
         }
         return false;
 
     }
+
+
+    
     @Override
     public void handle(KeyEvent e) {
             if(e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
@@ -90,6 +103,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
                 this.checkbounce();
                 bally +=vY;
 
+
             }
              if(e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)){
             System.out.println("Left key was pressed");
@@ -97,12 +111,14 @@ public class CharacterMove implements EventHandler <KeyEvent> {
                 this.checkbounce();
                 ballx-=vX;
 
+
             }
              if(e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)){
             System.out.println("Right key was pressed");
 
                 this.checkbounce();
                 ballx+=vX;
+
 
             }
 
