@@ -54,6 +54,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @FXML
     private void initialize() {
         money.setText(String.valueOf(sell.sumValue()));
+        money.setTextFill(Color.GREEN);
+        money.setStyle("-fx-font: 26 arial;");
        // count.setText(time.doTime());
     }
 
