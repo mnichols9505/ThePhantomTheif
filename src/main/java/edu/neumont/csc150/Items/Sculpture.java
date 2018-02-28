@@ -7,7 +7,8 @@ public class Sculpture extends Cash{
     }
     @Override
     int getAllowedDenomination() {
-        return 300;
+
+        return 500;
     }
 
 }

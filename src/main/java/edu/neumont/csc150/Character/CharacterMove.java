@@ -12,12 +12,17 @@ import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+
 
 public class CharacterMove implements EventHandler <KeyEvent> {
 
@@ -29,12 +34,23 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     private int vX = 20 , vY = 20;
 
     Sell sell = new Sell();
-    CountDown time = new CountDown();
+
+    private CharacterPickUp items = new CharacterPickUp();
 
     @FXML
     private Label money;
     @FXML
     private Label count;
+
+    @FXML
+    private ImageView one;
+    @FXML
+    private ImageView two;
+    @FXML
+    private ImageView three;
+    @FXML
+    private ImageView four;
+
 
     @FXML
     private void initialize() {
@@ -60,8 +76,15 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         gc.setFill(Color.BLUE);
         gc.fillOval(ballx,bally,ballwidth,ballheight);
 
+        one.setImage(items.getItems().get(0).getImage());
+        two.setImage(items.getItems().get(1).getImage());
+        three.setImage(items.getItems().get(2).getImage());
+        four.setImage(items.getItems().get(3).getImage());
+
 
     }
+
+
 
     public boolean checkbounce(){
         if(bally + ballheight >= this.mainCanvas.getHeight() || bally <=0){
@@ -108,6 +131,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
         if(e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
             System.out.println("Space key was pressed");
+
         }
 
 

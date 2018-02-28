@@ -1,10 +1,11 @@
 package edu.neumont.csc150.Items;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public abstract class Cash extends CurrencyPiece{
 
-    private ImageView image;
+    private Image image;
 
     public Cash() {
 
@@ -15,16 +16,15 @@ public abstract class Cash extends CurrencyPiece{
         super(value);
 
 
-        this.image = new ImageView(imageURL);
-        this.image.setFitHeight(30);
-        this.image.setFitWidth(30);
+        this.image = new Image(imageURL);
+
     }
 
-    public ImageView getImage() {
+    public Image getImage() {
         return image;
     }
 
-    public void setImage(ImageView image) {
+    public void setImage(Image image) {
         this.image = image;
     }
 }
