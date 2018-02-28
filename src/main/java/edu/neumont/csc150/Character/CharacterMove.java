@@ -165,6 +165,16 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
+    public void pickup(){
+        //Find out the position and see if an image is in that position
+        //Make image invisiable so the person cannot click it
+        //Add up currency
+
+        if(bally <= one.getLayoutX() || ballx <= one.getLayoutY() ){  //one - easter egg - ends the game automaticly
+            System.out.println("you collected money");
+
+        }
+    }
 
     
     @Override
@@ -203,7 +213,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
         if(e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
             System.out.println("Space key was pressed");
-
+                pickup();
 
         }
 
