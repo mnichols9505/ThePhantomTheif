@@ -19,9 +19,9 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 
-public class StartScreen extends Application{
+public class StartScreen extends Application {
 
-     static Stage startstage = new Stage();
+    static Stage startstage = new Stage();
 
 //    private boolean poison;
 //    private Integer start = 10;
@@ -39,7 +39,6 @@ public class StartScreen extends Application{
         startstage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
 
         startstage.show();
-      //  doTime();
 
     }
 
@@ -58,7 +57,6 @@ public class StartScreen extends Application{
         poison.start(PickYourPoison.levelPick);
 
 
-
     }
 
     @FXML
@@ -74,38 +72,5 @@ public class StartScreen extends Application{
         tutorial.start(Tutorial.tutstage);
 
     }
-
-//    private void doTime() {
-//
-//
-//        Timeline time = new Timeline();
-//        time.setCycleCount(Timeline.INDEFINITE);
-//        if(time!= null){
-//            time.stop();
-//        }
-//        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                seconds--;
-//
-//                if() {
-//
-//                    if (timerLabel != null) {
-//                        timerLabel.setText("Countdown: " + seconds.toString());
-//                    }
-//                    if (seconds <= 0) {
-//                        time.stop();
-//                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                        alert.setHeaderText("BOOM!");
-//                        alert.show();
-//
-//                    }
-//                }
-//            }
-//        });
-//
-//        time.getKeyFrames().add(frame);
-//        time.playFromStart();
-//    }
 
 }
