@@ -40,17 +40,15 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     @FXML
     private Label money;
-    @FXML
-    private Label count;
 
-    @FXML
-    private ImageView one;
-    @FXML
-    private ImageView two;
-    @FXML
-    private ImageView three;
-    @FXML
-    private ImageView four;
+//    @FXML
+//    private ImageView one;
+//    @FXML
+//    private ImageView two;
+//    @FXML
+//    private ImageView three;
+//    @FXML
+//    private ImageView four;
 
 
     @FXML
@@ -76,10 +74,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         gc.setFill(Color.BLUE);
         gc.fillOval(ballx,bally,ballwidth,ballheight);
 
-        one.setImage(items.getItems().get(0).getImage());
-        two.setImage(items.getItems().get(1).getImage());
-        three.setImage(items.getItems().get(2).getImage());
-        four.setImage(items.getItems().get(3).getImage());
+//        one.setImage(items.getItems().get(0).getImage());
+//        two.setImage(items.getItems().get(1).getImage());
+//        three.setImage(items.getItems().get(2).getImage());
+//        four.setImage(items.getItems().get(3).getImage());
 
 
     }
@@ -103,6 +101,18 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         if(ballx <= 0){
 //            vX *=-1;
             ballx *= 0;
+            return true;
+        }
+        return false;
+
+    }
+    public boolean Hardcheckbounce(){
+        if(bally + ballheight >= this.mainCanvas.getHeight() || bally <=0){
+            vY*=-1;
+            return true;
+        }
+        if(ballx + ballwidth >= this.mainCanvas.getWidth() || ballx <= 0){
+            vX *=-1;
             return true;
         }
         return false;

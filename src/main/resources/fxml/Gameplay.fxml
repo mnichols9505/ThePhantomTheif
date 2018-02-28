@@ -3,12 +3,14 @@
 <?import javafx.scene.Group?>
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Character.CharacterMove">
+<AnchorPane style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Character.CharacterMove">
    <Group>
       <HBox>
          <Label fx:id="timerLabel" text="Money: " />
@@ -22,10 +24,19 @@
          <Label fx:id="money" layoutX="115.0" prefHeight="66.0" prefWidth="115.0" />
       </children></Pane>
    <Pane layoutX="750.0" layoutY="14.0" prefHeight="60.0" prefWidth="150.0" />
-   <ImageView fx:id="one" fitHeight="89.0" fitWidth="107.0" layoutX="63.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
-   <ImageView fx:id="two" fitHeight="89.0" fitWidth="107.0" layoutX="63.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />
-   <ImageView fx:id="three" fitHeight="89.0" fitWidth="107.0" layoutX="275.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true" />
-   <ImageView fx:id="four" fitHeight="89.0" fitWidth="107.0" layoutX="643.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#445361" height="31.0" layoutY="247.0" stroke="BLACK" strokeType="INSIDE" width="319.0" />
+   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="357.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../Images/Exit.png" />
+      </image></ImageView>
+
+   
+
+
+   <!--<ImageView fx:id="one" fitHeight="45.0" fitWidth="48.0" layoutX="54.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />-->
+   <!--<ImageView fx:id="two" fitHeight="45.0" fitWidth="48.0"  layoutX="63.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />-->
+   <!--<ImageView fx:id="three" fitHeight="45.0" fitWidth="48.0"  layoutX="275.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true" />-->
+   <!--<ImageView fx:id="four" fitHeight="45.0" fitWidth="48.0"  layoutX="643.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />-->
 
 
 </AnchorPane>
