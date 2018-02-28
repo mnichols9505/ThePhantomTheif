@@ -35,6 +35,7 @@
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#445361" height="31.0" layoutX="0.0" layoutY="458.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#445361" height="31.0" layoutX="787.0" layoutY="407.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#445361" height="138.0" layoutX="364.0" layoutY="458.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />
+   <ImageView fx:id="ivOne" fitHeight="150.0" fitWidth="200.0" layoutX="18.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true" />
 
    <ImageView fx:id="one" fitHeight="66.0" fitWidth="66.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true" />
    <ImageView fx:id="two" fitHeight="66.0" fitWidth="66.0" layoutX="-2.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true" />

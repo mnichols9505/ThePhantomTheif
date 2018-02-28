@@ -5,14 +5,21 @@ import java.util.ArrayList;
 
 public class Sell extends ArrayList<CurrencyPiece>  {
         private static final long serialVersionUID = 1L;
+        public int accumulator;
 
-        public int sumValue() {
-            int accumulator = 0;
+
+
+    public int sumValue() {
+            accumulator = 0;
             for(CurrencyPiece piece : this) {
                 accumulator += piece.getValue();
             }
             return accumulator;
         }
+
+    public int getAccumulator() {
+        return accumulator;
+    }
 
 
 }
