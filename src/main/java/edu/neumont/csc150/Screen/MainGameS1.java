@@ -1,6 +1,7 @@
 package edu.neumont.csc150.Screen;
 
 import edu.neumont.csc150.Character.CharacterMove;
+import edu.neumont.csc150.Items.Sell;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
@@ -16,6 +17,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
@@ -30,6 +32,7 @@ public class MainGameS1 extends Application {
     private Integer startHard = 30;
     private Integer secondsHard = startHard;
     private Label timerLabel;
+    boolean poison = true;
 
     public void start(Stage stage) throws Exception {
 
@@ -54,8 +57,8 @@ public class MainGameS1 extends Application {
     }
 
     public void doTime() {
-
-
+        poison = true;
+        Sell sell = new Sell();
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
@@ -73,11 +76,18 @@ public class MainGameS1 extends Application {
                 if (seconds <= 0) {
                     time.stop();
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    Alert c = new Alert(Alert.AlertType.WARNING);
+
                     alert.setHeaderText("BOOM!");
+                    c.setHeaderText("You have collected:  ");
+                  //  c.setContentText(sell.accumulator);
                     alert.show();
+                    c.show();
 
                 }
             }
+
+
 
         });
 
@@ -86,8 +96,8 @@ public class MainGameS1 extends Application {
 
     }
     public void doHardTime() {
-
-
+        poison = false;
+//        iv1.setImage(imageHard);
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {

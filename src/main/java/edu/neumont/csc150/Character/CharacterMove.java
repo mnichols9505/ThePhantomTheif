@@ -128,8 +128,6 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
-
-
     public boolean checkbounce(){
         if (bally + ballheight >= this.mainCanvas.getHeight()){
             bally = bally - vY;
