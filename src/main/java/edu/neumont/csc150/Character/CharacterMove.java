@@ -187,6 +187,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         if(collide(three)){
             System.out.println("3");
         }
+        //
         if(collide(four)){
             System.out.println("4");
         }
