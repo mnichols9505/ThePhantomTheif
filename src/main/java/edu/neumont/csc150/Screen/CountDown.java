@@ -156,10 +156,10 @@ public class CountDown extends Application {
 
 
         HBox hbox = new HBox(5);
-        hbox.setAlignment(Pos.CENTER_LEFT);
         hbox.getChildren().add(label);
         hbox.setLayoutX(48);
         root.getChildren().add(hbox);
+        hbox.setAlignment(Pos.BOTTOM_RIGHT);
         secondStage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
         secondStage.show();
 
