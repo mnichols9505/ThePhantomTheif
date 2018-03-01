@@ -186,6 +186,36 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         if(collide(three)){
             System.out.println("3");
         }
+        if(collide(four)){
+            System.out.println("4");
+        }
+        if(collide(five)){
+            System.out.println("5");
+        }
+        if(collide(six)){
+            System.out.println("6");
+        }
+        if(collide(seven)){
+            System.out.println("7");
+        }
+        if(collide(eight)){
+            System.out.println("8");
+        }
+        if(collide(nine)){
+            System.out.println("9");
+        }
+        if(collide(ten)){
+            System.out.println("10");
+        }
+        if(collide(eleven)){
+            System.out.println("11");
+        }
+        if(collide(twelve)){
+            System.out.println("12");
+        }
+        if(collide(thirteen)){
+            System.out.println("13");
+        }
 
     }
 
