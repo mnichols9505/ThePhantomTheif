@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,7 +28,7 @@ public class CountDown extends Application {
     private Integer startHard = 30;
     private Integer secondsHard = startHard;
     private Label timerLabel;
-
+    Group root = new Group();
 
     public boolean isPoison() {
         return poison;
@@ -53,7 +54,10 @@ public class CountDown extends Application {
         hbox.getChildren().add(label);
         hbox.setLayoutX(48);
         root.getChildren().add(hbox);
-        doTime();
+
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(4, new Label("Second window"))));
+        secondStage.show();
 
         stage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
         stage.show();
@@ -72,11 +76,12 @@ public class CountDown extends Application {
                 seconds--;
 
 
-                if (timerLabel != null) {
-                    timerLabel.setText("Countdown: " + seconds.toString());
+                if (label != null) {
+                    label.setText("Countdown: " + seconds.toString());
                 }
                 if (seconds <= 0) {
                     time.stop();
+
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     Alert c = new Alert(Alert.AlertType.WARNING);
 
@@ -95,6 +100,19 @@ public class CountDown extends Application {
         time.getKeyFrames().add(frame);
         time.playFromStart();
         time.play();
+        Stage secondStage = new Stage();
+        label = new Label();
+        label.setTextFill(Color.WHITESMOKE);
+        label.setFont(Font.font(22));
+
+
+        HBox hbox = new HBox(5);
+        hbox.setAlignment(Pos.CENTER_LEFT);
+        hbox.getChildren().add(label);
+        hbox.setLayoutX(48);
+        root.getChildren().add(hbox);
+        secondStage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
+        secondStage.show();
 
     }
 
@@ -112,8 +130,8 @@ public class CountDown extends Application {
                 secondsHard--;
 
 
-                if (timerLabel != null) {
-                    timerLabel.setText("Countdown: " + secondsHard.toString());
+                if (label != null) {
+                    label.setText("Countdown: " + secondsHard.toString());
                 }
                 if (secondsHard <= 0) {
                     time.stop();
@@ -125,14 +143,24 @@ public class CountDown extends Application {
             }
 
         });
-
         time.getKeyFrames().add(frame);
         time.playFromStart();
+        time.play();
+        Stage secondStage = new Stage();
+        label = new Label();
+        label.setTextFill(Color.WHITESMOKE);
+        label.setFont(Font.font(22));
+
+
+        HBox hbox = new HBox(5);
+        hbox.setAlignment(Pos.CENTER_LEFT);
+        hbox.getChildren().add(label);
+        hbox.setLayoutX(48);
+        root.getChildren().add(hbox);
+        secondStage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
+        secondStage.show();
 
     }
-    public static void main(String[] args) {
-        Application.launch(CountDown.class,args);
 
-    }
 }
 
