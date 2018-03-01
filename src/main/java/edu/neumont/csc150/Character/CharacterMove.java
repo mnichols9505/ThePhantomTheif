@@ -235,10 +235,23 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             ballx *= 0;
             return true;
         }
-        if (collideRec(rectone)){
+        if(collideRec(rectone)){
+            if(bally + ballheight >= rectone.getHeight() ){
+                bally = bally - vY;
+            }
+           if(ballx + ballheight >= rectone.getWidth()){
+               ballx = ballx + vX;
+           }
+           if( rectone.getLayoutX() + rectone.getWidth() <= ballx){
+               System.out.println("hewwo");
 
+           }
 
         }
+
+
+
+
         return false;
 
     }
@@ -395,14 +408,22 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     public Rectangle2D getRecBoundary(Rectangle x){
         return new Rectangle2D(x.getLayoutX(),x.getLayoutY(),x.getWidth(),x.getHeight());
     }
+
     public boolean collide(ImageView x){
         return perGetBoundary().intersects(getBoundary(x));
     }
+
     public boolean collideRec(Rectangle x){
         return perGetBoundary().intersects(getRecBoundary(x));
     }
     public Rectangle2D exitSign(){
         return new Rectangle2D(exitx,exity,exitwidth,exitheight);
+    }
+    public boolean IntersectRec(Rectangle x){
+        return personColideRec().intersects(x.getBoundsInParent());
+    }
+    public Rectangle personColideRec(){
+        return new Rectangle(ballx,bally,ballwidth,ballheight);
     }
 
 
@@ -416,17 +437,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
                 temp = e;
                 System.out.println("UP key was pressed");
                 this.checkbounce();
-                if (collideRec(rectone)){
+                collideRec(rectone);
+                bally -=vY;
 
-
-                }
-                else if (collideRec(recttwo)){
-
-                }
-
-                else {
-                    bally -=vY;
-                }
 
 
 
@@ -436,17 +449,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
                 System.out.println("Down key was pressed");
 
                 this.checkbounce();
+                bally +=vY;
 
-                if (collideRec(rectone)){
-
-
-                }
-                else if (collideRec(rectthree)){
-
-                }
-                else {
-                    bally +=vY;
-                }
 
 
             }
@@ -454,20 +458,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             System.out.println("Left key was pressed");
 
                 this.checkbounce();
-                 if (collideRec(rectone)){
-
-
-                 }
-                 else if (collideRec(recttwo)){
-
-                 }
-                 else if (collideRec(rectthree)){
-
-                 }
-                 else {
-                     ballx-=vX;
-                 }
-
+                ballx-=vX;
 
 
             }
@@ -475,16 +466,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             System.out.println("Right key was pressed");
 
                 this.checkbounce();
+                ballx+=vX;
 
-                if(collideRec(recttwo)){
-
-                }
-                else if (collideRec(rectthree)){
-
-                }
-                else {
-                    ballx += vX;
-                }
 
             }
 
