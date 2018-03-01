@@ -25,12 +25,12 @@
       </children></Pane>
    <Pane layoutX="750.0" layoutY="14.0" prefHeight="60.0" prefWidth="150.0" />
 
-   <Rectangle fx:id="rectone" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="31.0" layoutY="247.0" stroke="BLACK" strokeType="INSIDE" width="319.0" layoutX="0.0"/>
+   <Rectangle fx:id="rectone" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="31.0" layoutX="0.0" layoutY="247.0" stroke="BLACK" strokeType="INSIDE" width="319.0" />
    <Rectangle fx:id="recttwo" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="119.0" layoutX="305.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
    <Rectangle fx:id="rectthree" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="138.0" layoutX="557.0" layoutY="458.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />
    <Rectangle fx:id="rectfour" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="31.0" layoutX="629.0" layoutY="247.0" stroke="BLACK" strokeType="INSIDE" width="281.0" />
    <Rectangle fx:id="rectfive" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="119.0" layoutX="756.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="27.0" />
-   <Rectangle fx:id="rectsix" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="323.0" layoutX="477.0" stroke="BLACK" strokeType="INSIDE" width="22.0" layoutY="0.0" />
+   <Rectangle fx:id="rectsix" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="323.0" layoutX="477.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
    <Rectangle fx:id="rectseven" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="31.0" layoutX="0.0" layoutY="458.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
    <Rectangle fx:id="recteight" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="31.0" layoutX="787.0" layoutY="407.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
    <Rectangle fx:id="rectnine" arcHeight="5.0" arcWidth="5.0" fill="#445361" height="138.0" layoutX="364.0" layoutY="458.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />

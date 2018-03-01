@@ -34,7 +34,8 @@ public class MainGameS1 extends Application {
     private Label timerLabel;
     boolean poison = true;
 
-
+    @FXML
+    private Label timerText;
 
 
     public void start(Stage stage) throws Exception {
@@ -59,76 +60,77 @@ public class MainGameS1 extends Application {
 
     }
 
-    public void doTime() {
-        poison = true;
-        Timeline time = new Timeline();
-        time.setCycleCount(Timeline.INDEFINITE);
-        if (time != null) {
-            time.stop();
-        }
-        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                seconds--;
-
-
-                if (timerLabel != null) {
-                    timerLabel.setText("Countdown: " + seconds.toString());
-                }
-                if (seconds <= 0) {
-                    time.stop();
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    Alert c = new Alert(Alert.AlertType.WARNING);
-
-                    alert.setHeaderText("BOOM!");
-                    c.setHeaderText("You have collected:  ");
-                  //  c.setContentText(sell.accumulator);
-                    alert.show();
-                    c.show();
-
-                }
-            }
-
-
-
-        });
-
-        time.getKeyFrames().add(frame);
-        time.playFromStart();
-
-    }
-    public void doHardTime() {
-        poison = true;
-
-        Timeline time = new Timeline();
-        time.setCycleCount(Timeline.INDEFINITE);
-        if (time != null) {
-            time.stop();
-        }
-        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                secondsHard--;
-
-
-                if (timerLabel != null) {
-                    timerLabel.setText("Countdown: " + secondsHard.toString());
-                }
-                if (secondsHard <= 0) {
-                    time.stop();
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setHeaderText("BOOM!");
-                    alert.show();
-
-                }
-            }
-
-        });
-
-        time.getKeyFrames().add(frame);
-        time.playFromStart();
-
-    }
+//    public void doTime() {
+//        poison = true;
+//        Timeline time = new Timeline();
+//        time.setCycleCount(Timeline.INDEFINITE);
+//        if (time != null) {
+//            time.stop();
+//        }
+//        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                seconds--;
+//
+//
+//                if (timerLabel != null) {
+//                    timerLabel.setText("Countdown: " + seconds.toString());
+//                }
+//                if (seconds <= 0) {
+//                    time.stop();
+//                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//                    Alert c = new Alert(Alert.AlertType.WARNING);
+//
+//                    alert.setHeaderText("BOOM!");
+//                    c.setHeaderText("You have collected:  ");
+//                  //  c.setContentText(sell.accumulator);
+//                    alert.show();
+//                    c.show();
+//
+//                }
+//            }
+//
+//
+//
+//        });
+//        timerText.setTextFill(Color.WHITESMOKE);
+//        time.getKeyFrames().add(frame);
+//        time.playFromStart();
+//        time.play();
+//
+//    }
+//    public void doHardTime() {
+//        poison = true;
+//
+//        Timeline time = new Timeline();
+//        time.setCycleCount(Timeline.INDEFINITE);
+//        if (time != null) {
+//            time.stop();
+//        }
+//        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                secondsHard--;
+//
+//
+//                if (timerLabel != null) {
+//                    timerLabel.setText("Countdown: " + secondsHard.toString());
+//                }
+//                if (secondsHard <= 0) {
+//                    time.stop();
+//                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//                    alert.setHeaderText("BOOM!");
+//                    alert.show();
+//
+//                }
+//            }
+//
+//        });
+//
+//        time.getKeyFrames().add(frame);
+//        time.playFromStart();
+//
+//    }
 }
 
 

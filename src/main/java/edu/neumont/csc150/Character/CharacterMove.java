@@ -89,7 +89,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     private Image p = new Image("Images/ghost.png");
     private ImageView person = new ImageView(p);
 
-    private Image sec = new Image("Images/30clock.gif", 50, 50, false, false);
+    private Image sec = new Image("Images/30.gif", 50, 50, false, false);
     private Image secHard = new Image("Images/90 Second.gif", 50, 50, false , false);
     public ImageView timerview;
     timer timer = new timer();
@@ -117,6 +117,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         money.setText(String.valueOf(sell.sumValue()));
         money.setTextFill(Color.GREEN);
         money.setStyle("-fx-font: 26 arial;");
+
 
 
 

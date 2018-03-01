@@ -16,14 +16,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
+import sun.applet.AppletListener;
 
 
 public class CountDown extends Application {
     private boolean poison;
-    private Integer start = 10;
-    private Integer seconds = start;
     private Label label;
+    private Integer start = 90;
+    private Integer seconds = start;
+    private Integer startHard = 30;
+    private Integer secondsHard = startHard;
+    private Label timerLabel;
 
 
     public boolean isPoison() {
@@ -39,8 +42,8 @@ public class CountDown extends Application {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("Gameplay.fxml")
         );
-
-        Group root = new Group();
+//
+      Group root = new Group();
         label = new Label();
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(22));
@@ -52,37 +55,84 @@ public class CountDown extends Application {
         root.getChildren().add(hbox);
         doTime();
 
-        stage.setScene(new Scene(root, 300,70,Color.BLUEVIOLET));
+        stage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
         stage.show();
     }
 
-    private void doTime() {
+    public void doTime() {
+        poison = true;
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
-            if(time!= null){
-                time.stop();
+        if (time != null) {
+            time.stop();
         }
         KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                    seconds--;
+                seconds--;
 
 
-                    label.setText("Countdown: "+seconds.toString());
-                     if(seconds<=0){
-                         time.stop();
-                         Alert alert= new Alert(Alert.AlertType.INFORMATION);
-                         alert.setHeaderText("BOOM!");
-                         alert.show();
+                if (timerLabel != null) {
+                    timerLabel.setText("Countdown: " + seconds.toString());
+                }
+                if (seconds <= 0) {
+                    time.stop();
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    Alert c = new Alert(Alert.AlertType.WARNING);
 
-                     }
+                    alert.setHeaderText("BOOM!");
+                    c.setHeaderText("You have collected:  ");
+                    //  c.setContentText(sell.accumulator);
+                    alert.show();
+                    c.show();
+
+                }
             }
+
+
         });
 
-            time.getKeyFrames().add(frame);
-            time.playFromStart();
+        time.getKeyFrames().add(frame);
+        time.playFromStart();
+        time.play();
+
     }
-    public static void main(String[] args){
-        Application.launch(CountDown.class, args);
+
+    public void doHardTime() {
+        poison = true;
+
+        Timeline time = new Timeline();
+        time.setCycleCount(Timeline.INDEFINITE);
+        if (time != null) {
+            time.stop();
+        }
+        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                secondsHard--;
+
+
+                if (timerLabel != null) {
+                    timerLabel.setText("Countdown: " + secondsHard.toString());
+                }
+                if (secondsHard <= 0) {
+                    time.stop();
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText("BOOM!");
+                    alert.show();
+
+                }
+            }
+
+        });
+
+        time.getKeyFrames().add(frame);
+        time.playFromStart();
+
+    }
+    public static void main(String[] args) {
+        Application.launch(CountDown.class,args);
+
     }
 }
+
