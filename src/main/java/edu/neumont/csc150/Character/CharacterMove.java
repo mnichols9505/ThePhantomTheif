@@ -178,6 +178,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         }
         if (collideRec(rectone)){
 
+
         }
         return false;
 
@@ -278,16 +279,29 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     public void handle(KeyEvent e) {
             if(e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
                 System.out.println("UP key was pressed");
-
                 this.checkbounce();
-                bally -=vY;
+                if (collideRec(rectone)){
+
+
+                }else {
+                    bally -=vY;
+                }
+
+
+
 
             }
             if(e.getCode().equals(KeyCode.DOWN)|| e.getCode().equals(KeyCode.S)){
                 System.out.println("Down key was pressed");
 
                 this.checkbounce();
-                bally +=vY;
+
+                if (collideRec(rectone)){
+
+
+                }else {
+                    bally +=vY;
+                }
 
 
             }
