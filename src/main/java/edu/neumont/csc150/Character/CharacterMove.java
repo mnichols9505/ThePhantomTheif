@@ -176,6 +176,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             ballx *= 0;
             return true;
         }
+        if (collideRec(rectone)){
+
+        }
         return false;
 
     }
@@ -260,12 +263,17 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     public Rectangle2D perGetBoundary(){
         return new Rectangle2D(ballx,bally,ballwidth,ballheight);
     }
+    public Rectangle2D getRecBoundary(Rectangle x){
+        return new Rectangle2D(x.getLayoutX(),x.getLayoutY(),x.getWidth(),x.getHeight());
+    }
     public boolean collide(ImageView x){
         return perGetBoundary().intersects(getBoundary(x));
-
-
     }
-    
+    public boolean collideRec(Rectangle x){
+        return perGetBoundary().intersects(getRecBoundary(x));
+    }
+
+
     @Override
     public void handle(KeyEvent e) {
             if(e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
