@@ -7,11 +7,21 @@
 
 <AnchorPane fx:id="winScreen" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #280D4B;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Screen.WinScreen">
    <children>
+      <ImageView fitHeight="313.0" fitWidth="345.0" layoutX="258.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/sparkle.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="313.0" fitWidth="338.0" layoutX="-13.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/sparkle.gif" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="166.0" fitWidth="472.0" layoutX="64.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Win.png" />
          </image>
       </ImageView>
-      <Button fx:id="word" text="Play Again" style="-fx-font: 20 arial;" onMouseClicked="#replay" layoutX="225.0" layoutY="330.0" mnemonicParsing="false" prefHeight="50" prefWidth="150"  textAlignment="CENTER"></Button>
+      <Button fx:id="word" layoutX="225.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#replay" prefHeight="50" prefWidth="150" style="-fx-font: 20 arial;" text="Play Again" textAlignment="CENTER" />
    </children>
 </AnchorPane>
