@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -107,9 +108,11 @@ public class CountDown extends Application {
 
 
         HBox hbox = new HBox(5);
-        hbox.setAlignment(Pos.CENTER_LEFT);
+        GaussianBlur blur = new GaussianBlur(0.0);
+        hbox.setAlignment(Pos.BASELINE_RIGHT);
         hbox.getChildren().add(label);
         hbox.setLayoutX(48);
+        hbox.setEffect(blur);
         root.getChildren().add(hbox);
         secondStage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
         secondStage.show();

@@ -89,10 +89,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     private Image p = new Image("Images/ghost.png");
     private ImageView person = new ImageView(p);
 
-    private Image sec = new Image("Images/30.gif", 50, 50, false, false);
-    private Image secHard = new Image("Images/90 Second.gif", 50, 50, false , false);
-    public ImageView timerview;
-    timer timer = new timer();
+
 
 
     PickYourPoison pp = new PickYourPoison();
@@ -169,7 +166,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         gc.fillRect(0,0,this.mainCanvas.getWidth(),this.mainCanvas.getHeight());
 
         //30second Timer
-         gc.drawImage(sec,850,50);
+
 
 
 
