@@ -4,6 +4,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #280D4B;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Screen.Looser">
    <children>
@@ -12,6 +13,7 @@
             <Image url="@../Images/lose.png" />
          </image>
       </ImageView>
-      <Button layoutX="201.0" layoutY="479.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="word" text="Play Again" style="-fx-font: 20 arial;" onMouseClicked="#replay" layoutX="225.0" layoutY="330.0" mnemonicParsing="false" prefHeight="50" prefWidth="150"  textAlignment="CENTER">
+         </Button>
    </children>
 </AnchorPane>

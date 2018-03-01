@@ -1,10 +1,13 @@
 package edu.neumont.csc150.Screen;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class WinScreen extends Application{
@@ -26,4 +29,16 @@ public class WinScreen extends Application{
 
     }
 
+    @FXML
+    public Button word;
+
+    @FXML
+    public void replay(MouseEvent event) throws Exception {
+
+        Stage stage = (Stage) word.getScene().getWindow();
+        stage.close();
+        StartScreen startScreen = new StartScreen();
+        startScreen.start(StartScreen.startstage);
+
+    }
 }
