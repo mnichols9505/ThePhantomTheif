@@ -233,26 +233,36 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             ballx *= 0;
             return true;
         }
-        if(collideRec(rectone)){
-            if(bally + ballheight >= rectone.getHeight() ){
-                bally = bally - vY;
-            }
-           if(ballx + ballheight >= rectone.getWidth()){
-               ballx = ballx + vX;
-           }
-           if( rectone.getLayoutX() + rectone.getWidth() <= ballx){
-               System.out.println("hewwo");
-
-           }
-
-        }
-
-
-
 
         return false;
 
     }
+
+    public boolean walls(){
+
+        if(collideRec(rectone))
+   {
+
+        if (((bally + ballheight) / 2) >= rectone.getHeight()) {
+            return false;
+        }
+        if (ballx + ballwidth >= rectone.getWidth()) {
+            return false;
+        }
+        if ((bally + ballheight) *5 >= rectone.getLayoutY() + rectone.getHeight()) {
+            System.out.println("hewwo");
+            return false;
+
+        }
+        else{
+
+            return true;
+        }
+    }
+    return true;
+
+    }
+
     public boolean Hardcheckbounce(){
         if(bally + ballheight >= this.mainCanvas.getHeight() || bally <=0){
             vY*=-1;
@@ -285,6 +295,11 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             if(one.getImage() != null){
                 one.setImage(null);
                 sell.addMoney(addMonies(0));
+                try {
+                    checkWin();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
             }
             one.setVisible(false);
 
@@ -430,51 +445,51 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @Override
     public void handle(KeyEvent e) {
 
-
-            if(e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
+        if(walls()) {
+            if (e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
                 temp = e;
                 System.out.println("UP key was pressed");
                 this.checkbounce();
                 collideRec(rectone);
-                bally -=vY;
-
-
-
+                bally -= vY;
 
 
             }
-            if(e.getCode().equals(KeyCode.DOWN)|| e.getCode().equals(KeyCode.S)){
+        }
+            if (e.getCode().equals(KeyCode.DOWN) || e.getCode().equals(KeyCode.S)) {
                 System.out.println("Down key was pressed");
 
                 this.checkbounce();
-                bally +=vY;
-
+                bally += vY;
 
 
             }
-             if(e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)){
-            System.out.println("Left key was pressed");
+            if (e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)) {
+                System.out.println("Left key was pressed");
 
                 this.checkbounce();
-                ballx-=vX;
+                ballx -= vX;
 
 
             }
-             if(e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)){
-            System.out.println("Right key was pressed");
+            if (e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)) {
+                System.out.println("Right key was pressed");
 
                 this.checkbounce();
-                ballx+=vX;
+                ballx += vX;
 
 
             }
 
-        if(e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
-            System.out.println("Space key was pressed");
+            if (e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
+                System.out.println("Space key was pressed");
                 pickup();
 
+            }
         }
+        else{
 
+        }
 
     }
 
