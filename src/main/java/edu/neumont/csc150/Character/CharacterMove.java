@@ -30,6 +30,7 @@ import javafx.util.Duration;
 
 public class CharacterMove implements EventHandler <KeyEvent> {
 
+
     @FXML
     private Canvas mainCanvas;
 
@@ -136,6 +137,25 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
 
     }
+
+    @FXML
+    public Rectangle rectone;
+    @FXML
+    public Rectangle recttwo;
+    @FXML
+    public Rectangle rectthree;
+    @FXML
+    public Rectangle rectfour;
+    @FXML
+    public Rectangle rectfive;
+    @FXML
+    public Rectangle rectsix;
+    @FXML
+    public Rectangle rectseven;
+    @FXML
+    public Rectangle recteight;
+    @FXML
+    public Rectangle rectnine;
 
     public boolean checkbounce(){
         if (bally + ballheight >= this.mainCanvas.getHeight()){
