@@ -137,6 +137,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         gc.setFill(Color.rgb(40,13,75));
         gc.fillRect(0,0,this.mainCanvas.getWidth(),this.mainCanvas.getHeight());
 
+        //30second Timer
          gc.drawImage(sec,850,50);
 
 
