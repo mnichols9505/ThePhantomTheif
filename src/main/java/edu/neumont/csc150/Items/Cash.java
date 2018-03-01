@@ -8,7 +8,6 @@ public abstract class Cash extends CurrencyPiece{
     private Image image;
 
     public Cash() {
-        //ha ba ba
 
     }
 

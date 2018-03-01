@@ -34,6 +34,9 @@ public class MainGameS1 extends Application {
     private Label timerLabel;
     boolean poison = true;
 
+
+
+
     public void start(Stage stage) throws Exception {
 
 
@@ -58,7 +61,6 @@ public class MainGameS1 extends Application {
 
     public void doTime() {
         poison = true;
-        Sell sell = new Sell();
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
@@ -96,8 +98,8 @@ public class MainGameS1 extends Application {
 
     }
     public void doHardTime() {
-        poison = false;
-//        iv1.setImage(imageHard);
+        poison = true;
+
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {

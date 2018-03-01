@@ -50,11 +50,9 @@
    <ImageView fx:id="twelve" fitHeight="66.0" fitWidth="66.0" layoutX="145.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" />
    <ImageView fx:id="thirteen" fitHeight="66.0" fitWidth="66.0" layoutX="211.0" pickOnBounds="true" preserveRatio="true" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#280d4b" height="200.0" layoutX="-102.0" layoutY="-122.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0" />
+   <ImageView fx:id="timerview" fitHeight="90.0" fitWidth="200.0" layoutX="713.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
 
-   
 
-
-   
 
 
 </AnchorPane>

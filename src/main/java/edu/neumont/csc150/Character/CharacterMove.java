@@ -3,6 +3,8 @@ package edu.neumont.csc150.Character;
 import com.sun.webkit.dom.KeyboardEventImpl;
 import edu.neumont.csc150.Items.Sell;
 import edu.neumont.csc150.Screen.CountDown;
+import edu.neumont.csc150.Screen.PickYourPoison;
+import edu.neumont.csc150.Screen.timer;
 import javafx.animation.KeyFrame;
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
@@ -35,15 +37,16 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @FXML
     private Canvas mainCanvas;
 
-    private int ballx = 460,bally = 540,ballwidth =50,ballheight=50;
+    private int ballx = 460, bally = 540, ballwidth = 50, ballheight = 50;
 
-    private int vX = 20 , vY = 20;
+    private int vX = 20, vY = 20;
 
     Sell sell = new Sell();
 
     private CharacterPickUp items = new CharacterPickUp();
 
-    private Image exit = new Image("Images/Exit.png",164,45,true,true);
+    private Image exit = new Image("Images/Exit.png", 164, 45, true, true);
+
 
     @FXML
     private Label money;
@@ -81,6 +84,25 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     private Image p = new Image("Images/ghost.png");
     private ImageView person = new ImageView(p);
 
+    private Image sec = new Image("Images/30clock.gif", 50, 50, false, false);
+    private Image secHard = new Image("Images/90 Second.gif", 50, 50, false , false);
+    public ImageView timerview;
+    timer timer = new timer();
+
+
+    PickYourPoison pp = new PickYourPoison();
+
+//    private void chooseImage() {
+//
+//    if(pp.poison == true){
+//
+//        timerview = new ImageView(sec);
+//    }
+//    if(pp.poison == false){
+//        timerview= new ImageView(secHard);
+//    }
+//    }
+
 
     @FXML
     private void initialize() {
@@ -101,11 +123,23 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     }
 
 
+//    public Image clock(){
+//        if(timer.getPoisonTime()){
+//            return new Image("Images/30clock.gif", 50, 50, false, false);
+//        }
+//        else{
+//            return new Image("Images/90 Second.gif", 50, 50, false , false);
+//        }
+//    }
     public void draw() {
         GraphicsContext gc = mainCanvas.getGraphicsContext2D();
 
         gc.setFill(Color.rgb(40,13,75));
         gc.fillRect(0,0,this.mainCanvas.getWidth(),this.mainCanvas.getHeight());
+
+         gc.drawImage(sec,850,50);
+
+
 
         gc.drawImage(exit,410,536);
 
@@ -115,6 +149,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         gc.drawImage(person.getImage(),ballx,bally,ballwidth,ballheight);
 
       //  gc.drawImage(person,ballx,bally,ballwidth,ballheight);
+
+      //  gc.drawImage(timerview.getImage(), ballx, bally, ballwidth, ballheight);
 
 
 

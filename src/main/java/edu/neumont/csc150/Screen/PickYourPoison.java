@@ -1,5 +1,6 @@
 package edu.neumont.csc150.Screen;
 
+import edu.neumont.csc150.Character.CharacterMove;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,9 @@ public class PickYourPoison extends Application{
 
     static Stage levelPick = new Stage();
     MainGameS1 mg = new MainGameS1();
+
+    public Boolean poison;
+    timer dif = new timer();
 
 
     public void start(Stage stage) throws Exception {
@@ -49,6 +53,7 @@ public class PickYourPoison extends Application{
     }
 
     public void gameClickHard(MouseEvent event) throws Exception {
+        dif.setBoolean(false);
 
         Stage stage = (Stage) gameButton.getScene().getWindow();
         CountDown hard = new CountDown();
