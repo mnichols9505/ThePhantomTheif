@@ -74,6 +74,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @FXML
     private ImageView thirteen;
 
+    private Image person = new Image("Images/ghost.png");
 
     @FXML
     private void initialize() {
@@ -102,8 +103,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
         gc.drawImage(exit,410,536);
 
-        gc.setFill(Color.rgb(200, 172, 239));
-        gc.fillOval(ballx,bally,ballwidth,ballheight);
+       // gc.setFill(Color.rgb(200, 172, 239));
+        // gc.fillOval(ballx,bally,ballwidth,ballheight);
+
+        gc.drawImage(person,ballx,bally,ballwidth,ballheight);
 
 
 
@@ -168,10 +171,11 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         //Make image invisiable so the person cannot click it
         //Add up currency
 
-        if(bally <= one.getLayoutX() || ballx <= one.getLayoutY() ){  //one - easter egg - ends the game automaticly
-            System.out.println("you collected money");
-
+        if((ballx >= one.getX() && ballx <= one.getX()+one.getFitWidth()) &&
+                (bally >=one.getY() && bally <= one.getY() + one.getFitHeight() )){
+            System.out.println("Your clicking cox");
         }
+
     }
 
     
