@@ -182,6 +182,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         }
         if(collide(two)){
             System.out.println("2");
+            two.setVisible(false);  //makes items disapear
         }
         if(collide(three)){
             System.out.println("3");
