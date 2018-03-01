@@ -179,6 +179,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
         if(collide(one)){
             System.out.println("Cox");
+            one.setVisible(false);
         }
         if(collide(two)){
             System.out.println("2");
@@ -186,37 +187,48 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         }
         if(collide(three)){
             System.out.println("3");
+            three.setVisible(false);
         }
-        //
+
         if(collide(four)){
             System.out.println("4");
+            four.setVisible(false);
         }
         if(collide(five)){
             System.out.println("5");
+            five.setVisible(false);
         }
         if(collide(six)){
             System.out.println("6");
+            six.setVisible(false);
         }
         if(collide(seven)){
             System.out.println("7");
+            seven.setVisible(false);
         }
         if(collide(eight)){
             System.out.println("8");
+            eight.setVisible(false);
         }
         if(collide(nine)){
             System.out.println("9");
+            nine.setVisible(false);
         }
         if(collide(ten)){
             System.out.println("10");
+            ten.setVisible(false);
         }
         if(collide(eleven)){
             System.out.println("11");
+            eleven.setVisible(false);
         }
         if(collide(twelve)){
             System.out.println("12");
+            twelve.setVisible(false);
         }
         if(collide(thirteen)){
             System.out.println("13");
+            thirteen.setVisible(false);
         }
 
     }
