@@ -26,6 +26,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.util.ArrayList;
 
 
 public class CharacterMove implements EventHandler <KeyEvent> {
@@ -118,6 +119,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
 
 
+        this.initialize();
 
         one.setImage(items.getItems().get(0).getImage());
         two.setImage(items.getItems().get(1).getImage());
@@ -195,6 +197,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
+    private int addMonies(int x){
+        return items.getItems().get(x).getValue();
+    }
+
     public void pickup(){
         //Find out the position and see if an image is in that position
         //Make image invisiable so the person cannot click it
@@ -202,55 +208,68 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
         if(collide(one)){
             System.out.println("Cox");
+            sell.addMoney(addMonies(0));
             one.setVisible(false);
         }
         if(collide(two)){
             System.out.println("2");
+            sell.addMoney(addMonies(1));
             two.setVisible(false);  //makes items disapear
         }
         if(collide(three)){
             System.out.println("3");
+            sell.addMoney(addMonies(2));
             three.setVisible(false);
         }
 
         if(collide(four)){
             System.out.println("4");
+            sell.addMoney(addMonies(3));
             four.setVisible(false);
         }
         if(collide(five)){
             System.out.println("5");
+            sell.addMoney(addMonies(4));
             five.setVisible(false);
         }
         if(collide(six)){
             System.out.println("6");
+            sell.addMoney(addMonies(5));
             six.setVisible(false);
         }
         if(collide(seven)){
             System.out.println("7");
+            sell.addMoney(addMonies(6));
             seven.setVisible(false);
         }
         if(collide(eight)){
             System.out.println("8");
+            sell.addMoney(addMonies(7));
             eight.setVisible(false);
         }
         if(collide(nine)){
             System.out.println("9");
+            sell.addMoney(addMonies(8));
             nine.setVisible(false);
         }
         if(collide(ten)){
             System.out.println("10");
+            sell.addMoney(addMonies(9));
             ten.setVisible(false);
         }
         if(collide(eleven)){
             System.out.println("11");
+            sell.addMoney(addMonies(10));
             eleven.setVisible(false);
         }
         if(collide(twelve)){
             System.out.println("12");
+            sell.addMoney(addMonies(11));
             twelve.setVisible(false);
         }
         if(collide(thirteen)){
             System.out.println("13");
+            sell.addMoney(addMonies(12));
             thirteen.setVisible(false);
         }
 
