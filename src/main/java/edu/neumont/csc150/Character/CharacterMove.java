@@ -11,8 +11,11 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
@@ -28,6 +31,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -115,7 +119,26 @@ public class CharacterMove implements EventHandler <KeyEvent> {
        // count.setText(time.doTime());
     }
 
+    private void makeItem(){
+
+        one.setImage(items.getItems().get(0).getImage());
+        two.setImage(items.getItems().get(1).getImage());
+        three.setImage(items.getItems().get(2).getImage());
+        four.setImage(items.getItems().get(3).getImage());
+        five.setImage(items.getItems().get(4).getImage());
+        six.setImage(items.getItems().get(5).getImage());
+        seven.setImage(items.getItems().get(6).getImage());
+        eight.setImage(items.getItems().get(7).getImage());
+        nine.setImage(items.getItems().get(8).getImage());
+        ten.setImage(items.getItems().get(9).getImage());
+        eleven.setImage(items.getItems().get(10).getImage());
+        twelve.setImage(items.getItems().get(11).getImage());
+        thirteen.setImage(items.getItems().get(12).getImage());
+
+
+    }
     public void init() {
+        makeItem();
         Timeline timer = new Timeline(new KeyFrame(Duration.millis(10), e -> draw()));
 
         timer.setCycleCount(Timeline.INDEFINITE);
@@ -123,7 +146,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     }
 
 
-//    public Image clock(){
+
+
+    //    public Image clock(){
 //        if(timer.getPoisonTime()){
 //            return new Image("Images/30clock.gif", 50, 50, false, false);
 //        }
@@ -158,24 +183,14 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
         this.initialize();
 
-        one.setImage(items.getItems().get(0).getImage());
-        two.setImage(items.getItems().get(1).getImage());
-        three.setImage(items.getItems().get(2).getImage());
-        four.setImage(items.getItems().get(3).getImage());
-        five.setImage(items.getItems().get(4).getImage());
-        six.setImage(items.getItems().get(5).getImage());
-        seven.setImage(items.getItems().get(6).getImage());
-        eight.setImage(items.getItems().get(7).getImage());
-        nine.setImage(items.getItems().get(8).getImage());
-        ten.setImage(items.getItems().get(9).getImage());
-        eleven.setImage(items.getItems().get(10).getImage());
-        twelve.setImage(items.getItems().get(11).getImage());
-        thirteen.setImage(items.getItems().get(12).getImage());
-
-
 
 
     }
+
+
+
+
+
 
     @FXML
     public Rectangle rectone;
@@ -246,43 +261,69 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
         if(collide(one)){
             System.out.println("Cox");
-            sell.addMoney(addMonies(0));
+            if(one.getImage() != null){
+                one.setImage(null);
+                sell.addMoney(addMonies(0));
+            }
             one.setVisible(false);
+
         }
         if(collide(two)){
             System.out.println("2");
-            sell.addMoney(addMonies(1));
+            if(two.getImage() != null) {
+                two.setImage(null);
+                sell.addMoney(addMonies(1));
+            }
             two.setVisible(false);  //makes items disapear
+
         }
         if(collide(three)){
             System.out.println("3");
-            sell.addMoney(addMonies(2));
+            if(three.getImage() != null) {
+                three.setImage(null);
+                sell.addMoney(addMonies(2));
+            }
             three.setVisible(false);
         }
 
         if(collide(four)){
             System.out.println("4");
-            sell.addMoney(addMonies(3));
+            if(four.getImage() != null) {
+                four.setImage(null);
+                sell.addMoney(addMonies(3));
+            }
             four.setVisible(false);
         }
         if(collide(five)){
             System.out.println("5");
-            sell.addMoney(addMonies(4));
+            if(five.getImage() != null) {
+                five.setImage(null);
+                sell.addMoney(addMonies(4));
+            }
             five.setVisible(false);
         }
         if(collide(six)){
             System.out.println("6");
-            sell.addMoney(addMonies(5));
+            if(six.getImage() != null) {
+                six.setImage(null);
+                sell.addMoney(addMonies(5));
+            }
             six.setVisible(false);
         }
         if(collide(seven)){
             System.out.println("7");
-            sell.addMoney(addMonies(6));
+            if(seven.getImage() != null) {
+                seven.setImage(null);
+                sell.addMoney(addMonies(6));
+            }
             seven.setVisible(false);
         }
         if(collide(eight)){
             System.out.println("8");
-            sell.addMoney(addMonies(7));
+            if(eight.getImage() != null) {
+                eight.setImage(null);
+                sell.addMoney(addMonies(7));
+            }
             eight.setVisible(false);
         }
         if(collide(nine)){
@@ -292,22 +333,34 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         }
         if(collide(ten)){
             System.out.println("10");
-            sell.addMoney(addMonies(9));
+            if(ten.getImage() != null) {
+                ten.setImage(null);
+                sell.addMoney(addMonies(9));
+            }
             ten.setVisible(false);
         }
         if(collide(eleven)){
             System.out.println("11");
-            sell.addMoney(addMonies(10));
+            if(eleven.getImage() != null) {
+                eleven.setImage(null);
+                sell.addMoney(addMonies(10));
+            }
             eleven.setVisible(false);
         }
         if(collide(twelve)){
             System.out.println("12");
-            sell.addMoney(addMonies(11));
+            if(twelve.getImage() != null) {
+                twelve.setImage(null);
+                sell.addMoney(addMonies(11));
+            }
             twelve.setVisible(false);
         }
         if(collide(thirteen)){
             System.out.println("13");
-            sell.addMoney(addMonies(12));
+            if(thirteen.getImage() != null) {
+                thirteen.setImage(null);
+                sell.addMoney(addMonies(12));
+            }
             thirteen.setVisible(false);
         }
 
