@@ -4,16 +4,20 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #280D4B;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Screen.Looser">
    <children>
+      <ImageView fitHeight="385.0" fitWidth="498.0" layoutX="52.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/sparklelose.gif" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="178.0" fitWidth="460.0" layoutX="86.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/lose.png" />
          </image>
       </ImageView>
-      <Button fx:id="word" text="Play Again" style="-fx-font: 20 arial;" onMouseClicked="#replay" layoutX="225.0" layoutY="330.0" mnemonicParsing="false" prefHeight="50" prefWidth="150"  textAlignment="CENTER">
+      <Button fx:id="word" layoutX="225.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#replay" prefHeight="50" prefWidth="150" style="-fx-font: 20 arial;" text="Play Again" textAlignment="CENTER">
          </Button>
    </children>
 </AnchorPane>
