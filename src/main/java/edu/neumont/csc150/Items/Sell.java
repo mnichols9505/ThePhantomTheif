@@ -8,7 +8,15 @@ public class Sell {
 
         public int accumulator = 0;
 
-
+    public boolean checkMoney() {
+        if (getAccumulator() >= 10000){
+            return true;
+        }
+        if (getAccumulator() < 10000){
+            return false;
+        }
+        return false;
+    }
 
     public int sumValue() {
                 return this.getAccumulator();
@@ -22,5 +30,7 @@ public class Sell {
     public void addMoney(int x){
         this.accumulator += x;
     }
+
+
 
 }

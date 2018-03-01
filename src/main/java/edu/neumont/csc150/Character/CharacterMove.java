@@ -2,9 +2,7 @@ package edu.neumont.csc150.Character;
 
 import com.sun.webkit.dom.KeyboardEventImpl;
 import edu.neumont.csc150.Items.Sell;
-import edu.neumont.csc150.Screen.CountDown;
-import edu.neumont.csc150.Screen.PickYourPoison;
-import edu.neumont.csc150.Screen.timer;
+import edu.neumont.csc150.Screen.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
@@ -43,13 +41,16 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     private int ballx = 460, bally = 540, ballwidth = 50, ballheight = 50;
 
+
     private int vX = 20, vY = 20;
 
     Sell sell = new Sell();
 
     private CharacterPickUp items = new CharacterPickUp();
 
-    private Image exit = new Image("Images/Exit.png", 164, 45, true, true);
+    private int exity = 536, exitx = 410, exitwidth = 164, exitheight = 45;
+    private Image e = new Image("Images/Exit.png", exitwidth, exitheight, true, true);
+    private ImageView exit = new ImageView(e);
 
 
     @FXML
@@ -116,7 +117,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         money.setText(String.valueOf(sell.sumValue()));
         money.setTextFill(Color.GREEN);
         money.setStyle("-fx-font: 26 arial;");
-       // count.setText(time.doTime());
+
+
+
+        // count.setText(time.doTime());
     }
 
     private void makeItem(){
@@ -156,6 +160,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 //            return new Image("Images/90 Second.gif", 50, 50, false , false);
 //        }
 //    }
+
     public void draw() {
         GraphicsContext gc = mainCanvas.getGraphicsContext2D();
 
@@ -167,7 +172,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
 
 
-        gc.drawImage(exit,410,536);
+        gc.drawImage(exit.getImage(),exitx,exity);
 
        // gc.setFill(Color.rgb(200, 172, 239));
         // gc.fillOval(ballx,bally,ballwidth,ballheight);
@@ -253,6 +258,11 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     private int addMonies(int x){
         return items.getItems().get(x).getValue();
     }
+
+
+
+
+
 
     public void pickup(){
         //Find out the position and see if an image is in that position
@@ -363,6 +373,15 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             }
             thirteen.setVisible(false);
         }
+        if (perGetBoundary().intersects(exitSign())) {
+            System.out.println("exit");
+            try {
+                checkWin();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+
 
     }
 
@@ -382,17 +401,30 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     public boolean collideRec(Rectangle x){
         return perGetBoundary().intersects(getRecBoundary(x));
     }
+    public Rectangle2D exitSign(){
+        return new Rectangle2D(exitx,exity,exitwidth,exitheight);
+    }
 
 
+
+    private KeyEvent temp;
     @Override
     public void handle(KeyEvent e) {
+
+
             if(e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
+                temp = e;
                 System.out.println("UP key was pressed");
                 this.checkbounce();
                 if (collideRec(rectone)){
 
 
-                }else {
+                }
+                else if (collideRec(recttwo)){
+
+                }
+
+                else {
                     bally -=vY;
                 }
 
@@ -408,7 +440,11 @@ public class CharacterMove implements EventHandler <KeyEvent> {
                 if (collideRec(rectone)){
 
 
-                }else {
+                }
+                else if (collideRec(rectthree)){
+
+                }
+                else {
                     bally +=vY;
                 }
 
@@ -418,7 +454,20 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             System.out.println("Left key was pressed");
 
                 this.checkbounce();
-                ballx-=vX;
+                 if (collideRec(rectone)){
+
+
+                 }
+                 else if (collideRec(recttwo)){
+
+                 }
+                 else if (collideRec(rectthree)){
+
+                 }
+                 else {
+                     ballx-=vX;
+                 }
+
 
 
             }
@@ -426,8 +475,16 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             System.out.println("Right key was pressed");
 
                 this.checkbounce();
-                ballx+=vX;
 
+                if(collideRec(recttwo)){
+
+                }
+                else if (collideRec(rectthree)){
+
+                }
+                else {
+                    ballx += vX;
+                }
 
             }
 
@@ -439,4 +496,28 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
 
     }
+
+    public void checkWin() throws Exception {
+        if (sell.checkMoney()){
+            win();
+        }else {
+            loose();
+        }
+    }
+
+
+    public void win() throws Exception {
+        WinScreen winScreen = new WinScreen();
+        Stage stage = (Stage) this.recttwo.getScene().getWindow();
+        stage.close();
+        winScreen.start(WinScreen.win);
+    }
+
+    public void loose() throws Exception {
+        Looser looser = new Looser();
+        Stage stage = (Stage) this.rectthree.getScene().getWindow();
+        stage.close();
+        looser.start(Looser.lose);
+    }
+
 }
