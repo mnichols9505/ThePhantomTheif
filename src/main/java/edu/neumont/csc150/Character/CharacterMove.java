@@ -285,6 +285,11 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             if(one.getImage() != null){
                 one.setImage(null);
                 sell.addMoney(addMonies(0));
+                try {
+                    winCox();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
             }
             one.setVisible(false);
 
@@ -486,6 +491,12 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         }
     }
 
+    public void winCox() throws Exception {
+        CoxFound coxFound = new CoxFound();
+        Stage stage = (Stage) this.rectthree.getScene().getWindow();
+        stage.close();
+        coxFound.start(CoxFound.cox);
+    }
 
     public void win() throws Exception {
         WinScreen winScreen = new WinScreen();
