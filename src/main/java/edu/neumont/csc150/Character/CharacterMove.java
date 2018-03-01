@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
@@ -21,6 +22,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -74,7 +76,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @FXML
     private ImageView thirteen;
 
-    private Image person = new Image("Images/ghost.png");
+    private Image p = new Image("Images/ghost.png");
+    private ImageView person = new ImageView(p);
+
 
     @FXML
     private void initialize() {
@@ -106,7 +110,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
        // gc.setFill(Color.rgb(200, 172, 239));
         // gc.fillOval(ballx,bally,ballwidth,ballheight);
 
-        gc.drawImage(person,ballx,bally,ballwidth,ballheight);
+        gc.drawImage(person.getImage(),ballx,bally,ballwidth,ballheight);
+
+      //  gc.drawImage(person,ballx,bally,ballwidth,ballheight);
 
 
 
@@ -171,13 +177,30 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         //Make image invisiable so the person cannot click it
         //Add up currency
 
-        if((ballx >= one.getX() && ballx <= one.getX()+one.getFitWidth()) &&
-                (bally >=one.getY() && bally <= one.getY() + one.getFitHeight() )){
-            System.out.println("Your clicking cox");
+        if(collide(one)){
+            System.out.println("Cox");
+        }
+        if(collide(two)){
+            System.out.println("2");
+        }
+        if(collide(three)){
+            System.out.println("3");
         }
 
     }
 
+    public Rectangle2D getBoundary(ImageView x){
+        return new Rectangle2D(x.getLayoutX(),x.getLayoutY(),x.getFitWidth(),x.getFitHeight());
+    }
+
+    public Rectangle2D perGetBoundary(){
+        return new Rectangle2D(ballx,bally,ballwidth,ballheight);
+    }
+    public boolean collide(ImageView x){
+        return perGetBoundary().intersects(getBoundary(x));
+
+
+    }
     
     @Override
     public void handle(KeyEvent e) {
