@@ -27,10 +27,12 @@ import java.awt.*;
 public class CountDown extends Application {
     private boolean poison;
     private Label label;
-    private Integer start = 90;
+    private Integer start = 93;
     private Integer seconds = start;
-    private Integer startHard = 30;
+    private Integer startHard = 33;
     private Integer secondsHard = startHard;
+    private Integer startStart = 3;
+    private Integer secondsStart = startStart;
     private Label timerLabel;
     Group root = new Group();
 
@@ -115,6 +117,7 @@ public class CountDown extends Application {
                 }
                 if (secondsHard <= 0) {
                     time.stop();
+
                 }
             }
 
@@ -137,5 +140,48 @@ public class CountDown extends Application {
 
     }
 
-}
+    public void do3Time() {
+        Stage secondStage = new Stage();
+        HBox hbox = new HBox(5);
+        Timeline time = new Timeline();
+        time.setCycleCount(Timeline.INDEFINITE);
+        if (time != null) {
+            time.stop();
+        }
+        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                secondsStart--;
+
+                if (label != null) {
+                    label.setText("Countdown: " + secondsStart.toString());
+                }
+                if (secondsStart <= 0) {
+                    time.stop();
+                    secondStage.close();
+                }
+            }
+
+        });
+        time.getKeyFrames().add(frame);
+        time.playFromStart();
+        time.play();
+
+        label = new Label();
+        label.setTextFill(Color.WHITESMOKE);
+        label.setFont(Font.font(22));
+        secondStage.setTitle("READY?");
+        secondStage.setX(0);
+        secondStage.setY(0);
+        hbox.getChildren().add(label);
+        root.getChildren().add(hbox);
+        hbox.setAlignment(Pos.BOTTOM_RIGHT);
+        secondStage.setScene(new Scene(root, 300, 70, Color.DARKSALMON));
+        secondStage.show();
+
+
+    }
+    }
+
+
 

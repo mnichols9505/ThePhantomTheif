@@ -59,7 +59,8 @@ public class PickYourPoison extends Application{
         CountDown easy = new CountDown();
         easy.doTime();
         Stage stage = (Stage) gameButton.getScene().getWindow();
-
+        CountDown c = new CountDown();
+        c.do3Time();
         easy.setPoison(true);
         stage.close();
         MainGameS1 game= new MainGameS1();
@@ -74,7 +75,8 @@ public class PickYourPoison extends Application{
         CountDown hard = new CountDown();
         hard.doHardTime();
         Stage stage = (Stage) gameButton.getScene().getWindow();
-
+        CountDown c = new CountDown();
+        c.do3Time();
         hard.setPoison(false);
         stage.close();
         MainGameS1 game= new MainGameS1();
