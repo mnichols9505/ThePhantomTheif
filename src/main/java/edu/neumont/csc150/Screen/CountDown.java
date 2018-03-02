@@ -146,7 +146,6 @@ public class CountDown extends Application {
 
         HBox hbox = new HBox(5);
 
-
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
             time.stop();
@@ -199,8 +198,7 @@ public class CountDown extends Application {
                 e.printStackTrace();
             }
         }else {
-            Stage stage = (Stage) label.getScene().getWindow();
-            stage.close();
+
         }
     }
     public void clock() {
