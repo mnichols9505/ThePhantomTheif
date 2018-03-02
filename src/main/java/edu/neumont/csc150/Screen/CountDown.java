@@ -137,6 +137,7 @@ public class CountDown extends Application {
 
     public void do3Time() {
 
+
         HBox hbox = new HBox(5);
 
         time.setCycleCount(Timeline.INDEFINITE);
