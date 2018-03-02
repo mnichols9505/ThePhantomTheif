@@ -48,6 +48,11 @@ public class MainGameS1 extends Application {
         dude.init();
     }
 
+    public void gameClose(){
+        Stage stage = (Stage) Gamestage.getScene().getWindow();
+        stage.close();
+    }
+
 }
 
 

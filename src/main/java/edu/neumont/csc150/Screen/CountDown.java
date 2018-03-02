@@ -183,7 +183,9 @@ public class CountDown extends Application {
         Stage stage = (Stage) label.getScene().getWindow() ;
         stage.close();
         Looser looser = new Looser();
+        MainGameS1 gameS1= new MainGameS1();
         try {
+            gameS1.gameClose();
             looser.start(Looser.lose);
         } catch (Exception e) {
             e.printStackTrace();
