@@ -13,12 +13,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
+import javafx.scene.effect.Shadow;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import sun.applet.AppletListener;
+
+import java.awt.*;
 
 
 public class CountDown extends Application {
@@ -44,21 +47,8 @@ public class CountDown extends Application {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("Gameplay.fxml")
         );
-//
+
       Group root = new Group();
-        label = new Label();
-        label.setTextFill(Color.WHITESMOKE);
-        label.setFont(Font.font(22));
-
-
-        HBox hbox = new HBox(5);
-        hbox.getChildren().add(label);
-        hbox.setLayoutX(48);
-        root.getChildren().add(hbox);
-
-        Stage secondStage = new Stage();
-        secondStage.setScene(new Scene(new HBox(4, new Label("Second window"))));
-        secondStage.show();
 
         stage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
         stage.show();
@@ -83,19 +73,8 @@ public class CountDown extends Application {
                 if (seconds <= 0) {
                     time.stop();
 
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    Alert c = new Alert(Alert.AlertType.WARNING);
-
-                    alert.setHeaderText("BOOM!");
-                    c.setHeaderText("You have collected:  ");
-                    //  c.setContentText(sell.accumulator);
-                    alert.show();
-                    c.show();
-
                 }
             }
-
-
         });
 
         time.getKeyFrames().add(frame);
@@ -106,7 +85,8 @@ public class CountDown extends Application {
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(22));
 
-
+        secondStage.setX(0);
+        secondStage.setY(0);
         HBox hbox = new HBox(5);
         GaussianBlur blur = new GaussianBlur(0.0);
         hbox.setAlignment(Pos.BASELINE_RIGHT);
@@ -116,12 +96,10 @@ public class CountDown extends Application {
         root.getChildren().add(hbox);
         secondStage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
         secondStage.show();
-
     }
-
     public void doHardTime() {
         poison = true;
-
+        HBox hbox = new HBox(5);
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
@@ -132,16 +110,11 @@ public class CountDown extends Application {
             public void handle(ActionEvent event) {
                 secondsHard--;
 
-
                 if (label != null) {
                     label.setText("Countdown: " + secondsHard.toString());
                 }
                 if (secondsHard <= 0) {
                     time.stop();
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setHeaderText("BOOM!");
-                    alert.show();
-
                 }
             }
 
@@ -154,10 +127,9 @@ public class CountDown extends Application {
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(22));
 
-
-        HBox hbox = new HBox(5);
+        secondStage.setX(0);
+        secondStage.setY(0);
         hbox.getChildren().add(label);
-        hbox.setLayoutX(48);
         root.getChildren().add(hbox);
         hbox.setAlignment(Pos.BOTTOM_RIGHT);
         secondStage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));

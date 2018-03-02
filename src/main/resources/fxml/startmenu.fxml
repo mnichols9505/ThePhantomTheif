@@ -7,11 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.Group?>
-<?import javafx.scene.control.Label?>
 <AnchorPane prefHeight="600" prefWidth="900" style="-fx-background-color: #280D4B;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Screen.StartScreen">
    <children>
+      <ImageView fitHeight="530.0" fitWidth="872.0" layoutX="-4.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/sparklelose.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="626.0" fitWidth="745.0" layoutX="150.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/sparklelose.gif" />
+         </image>
+      </ImageView>
       <!--<Group>-->
          <!--<HBox>-->
             <!--<Label fx:id="timerLabel" text="Money: " />-->
@@ -31,11 +38,11 @@
             <Image url="@../Images/The%20PhantomThief%20Title_Transparent.png" />
          </image>
       </ImageView>
-      <Button fx:id="startButton" onMouseClicked="#startClick" layoutX="379.0" layoutY="342.0" mnemonicParsing="false" text="Start" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+      <Button fx:id="startButton" layoutX="379.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#startClick" text="Start" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
          <font>
             <Font size="42.0" />
          </font></Button>
-      <Button fx:id="button" layoutX="353.0" layoutY="463.0" mnemonicParsing="false" text="Tutorial" onMouseClicked="#tutorialClick" textAlignment="CENTER">
+      <Button fx:id="button" layoutX="353.0" layoutY="463.0" mnemonicParsing="false" onMouseClicked="#tutorialClick" text="Tutorial" textAlignment="CENTER">
          <font>
             <Font size="41.0" />
          </font></Button>
@@ -49,6 +56,6 @@
             <Image url="@../Images/star.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="650.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="700.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

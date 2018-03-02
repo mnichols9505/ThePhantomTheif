@@ -20,10 +20,8 @@ public class PickYourPoison extends Application{
     private Label label;
     static Stage levelPick = new Stage();
     static Stage Timer = new Stage();
-    MainGameS1 mg = new MainGameS1();
 
-    public Boolean poison;
-    timer dif = new timer();
+
 
 
     public void start(Stage stage) throws Exception {
@@ -49,8 +47,6 @@ public class PickYourPoison extends Application{
         hbox.setLayoutX(48);
 
         rootTime.getChildren().add(hbox);
-
-
     }
 
     @FXML
@@ -73,7 +69,7 @@ public class PickYourPoison extends Application{
     }
 
     public void gameClickHard(MouseEvent event) throws Exception {
-        dif.setBoolean(false);
+
         Stage stage = (Stage) gameButton.getScene().getWindow();
         CountDown hard = new CountDown();
         hard.setPoison(false);

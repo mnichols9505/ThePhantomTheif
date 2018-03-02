@@ -89,23 +89,6 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     private Image p = new Image("Images/ghost.png");
     private ImageView person = new ImageView(p);
 
-
-
-
-    PickYourPoison pp = new PickYourPoison();
-
-//    private void chooseImage() {
-//
-//    if(pp.poison == true){
-//
-//        timerview = new ImageView(sec);
-//    }
-//    if(pp.poison == false){
-//        timerview= new ImageView(secHard);
-//    }
-//    }
-
-
     @FXML
     private void initialize() {
         moneytwo.setStyle("-fx-font: 26 arial;");
@@ -115,10 +98,6 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         money.setTextFill(Color.GREEN);
         money.setStyle("-fx-font: 26 arial;");
 
-
-
-
-        // count.setText(time.doTime());
     }
 
     private void makeItem(){
@@ -147,42 +126,15 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         timer.play();
     }
 
-
-
-
-    //    public Image clock(){
-//        if(timer.getPoisonTime()){
-//            return new Image("Images/30clock.gif", 50, 50, false, false);
-//        }
-//        else{
-//            return new Image("Images/90 Second.gif", 50, 50, false , false);
-//        }
-//    }
-
     public void draw() {
         GraphicsContext gc = mainCanvas.getGraphicsContext2D();
 
         gc.setFill(Color.rgb(40,13,75));
         gc.fillRect(0,0,this.mainCanvas.getWidth(),this.mainCanvas.getHeight());
 
-        //30second Timer
-
-
-
-
         gc.drawImage(exit.getImage(),exitx,exity);
 
-       // gc.setFill(Color.rgb(200, 172, 239));
-        // gc.fillOval(ballx,bally,ballwidth,ballheight);
-
         gc.drawImage(person.getImage(),ballx,bally,ballwidth,ballheight);
-
-      //  gc.drawImage(person,ballx,bally,ballwidth,ballheight);
-
-      //  gc.drawImage(timerview.getImage(), ballx, bally, ballwidth, ballheight);
-
-
-
 
         this.initialize();
 
@@ -233,36 +185,23 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             ballx *= 0;
             return true;
         }
+        if(collideRec(rectone)){
+            if(bally + ballheight >= rectone.getHeight() ){
+                bally = bally - vY;
+            }
+           if(ballx + ballheight >= rectone.getWidth()){
+               ballx = ballx + vX;
+           }
+           if( rectone.getLayoutX() + rectone.getWidth() <= ballx){
+               System.out.println("hewwo");
+
+           }
+
+        }
 
         return false;
 
     }
-
-    public boolean walls(){
-
-        if(collideRec(rectone))
-   {
-
-        if (((bally + ballheight) / 2) >= rectone.getHeight()) {
-            return false;
-        }
-        if (ballx + ballwidth >= rectone.getWidth()) {
-            return false;
-        }
-        if ((bally + ballheight) *5 >= rectone.getLayoutY() + rectone.getHeight()) {
-            System.out.println("hewwo");
-            return false;
-
-        }
-        else{
-
-            return true;
-        }
-    }
-    return true;
-
-    }
-
     public boolean Hardcheckbounce(){
         if(bally + ballheight >= this.mainCanvas.getHeight() || bally <=0){
             vY*=-1;
@@ -311,7 +250,6 @@ public class CharacterMove implements EventHandler <KeyEvent> {
                 sell.addMoney(addMonies(1));
             }
             two.setVisible(false);  //makes items disapear
-
 
         }
         if(collide(three)){
@@ -446,51 +384,47 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @Override
     public void handle(KeyEvent e) {
 
-        if(walls()) {
-            if (e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
+
+            if(e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
                 temp = e;
                 System.out.println("UP key was pressed");
                 this.checkbounce();
                 collideRec(rectone);
-                bally -= vY;
-
+                bally -=vY;
 
             }
-        }
-            if (e.getCode().equals(KeyCode.DOWN) || e.getCode().equals(KeyCode.S)) {
+            if(e.getCode().equals(KeyCode.DOWN)|| e.getCode().equals(KeyCode.S)){
                 System.out.println("Down key was pressed");
 
                 this.checkbounce();
-                bally += vY;
+                bally +=vY;
+
 
 
             }
-            if (e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)) {
-                System.out.println("Left key was pressed");
+             if(e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)){
+            System.out.println("Left key was pressed");
 
                 this.checkbounce();
-                ballx -= vX;
+                ballx-=vX;
 
 
             }
-            if (e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)) {
-                System.out.println("Right key was pressed");
+             if(e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)){
+            System.out.println("Right key was pressed");
 
                 this.checkbounce();
-                ballx += vX;
+                ballx+=vX;
 
 
             }
 
-            if (e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
-                System.out.println("Space key was pressed");
+        if(e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
+            System.out.println("Space key was pressed");
                 pickup();
 
-            }
         }
-        else{
 
-        }
 
     }
 
