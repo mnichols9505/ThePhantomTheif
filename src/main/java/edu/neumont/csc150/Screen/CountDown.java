@@ -144,7 +144,7 @@ public class CountDown extends Application {
         hbox.getChildren().add(label);
         root.getChildren().add(hbox);
         hbox.setAlignment(Pos.BOTTOM_RIGHT);
-        secondStageHard.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
+        secondStageHard.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));//
         secondStageHard.show();
 
 
