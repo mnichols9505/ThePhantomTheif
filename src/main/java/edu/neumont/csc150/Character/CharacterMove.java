@@ -346,6 +346,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             System.out.println("exit");
             try {
                 checkWin();
+                c.close(false);
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
@@ -445,7 +446,6 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         coxFound.start(CoxFound.cox);
-        c.secondStage.close();
     }
 
     public void win () throws Exception {
@@ -454,7 +454,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         stage.close();
         winScreen.start(WinScreen.win);
 
-        c.secondStage.close();
+
     }
 
     public void loose () throws Exception {
@@ -462,8 +462,5 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         looser.start(Looser.lose);
-
-        c.secondStage.close();
-
     }
 }

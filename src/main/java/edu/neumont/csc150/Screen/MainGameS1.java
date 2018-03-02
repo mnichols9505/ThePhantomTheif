@@ -59,6 +59,11 @@ public class MainGameS1 extends Application {
         mediaPlayer.play();
     }
 
+    public void gameClose(){
+        Stage stage = (Stage) Gamestage.getScene().getWindow();
+        stage.close();
+    }
+
 }
 
 
