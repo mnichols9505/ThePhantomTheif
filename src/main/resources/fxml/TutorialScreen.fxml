@@ -15,6 +15,11 @@
             <Image url="@../Images/background.jpg" />
          </image>
       </ImageView>
+      <ImageView fitHeight="594.0" fitWidth="1054.0" layoutX="179.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/sparklelose.gif" />
+         </image>
+      </ImageView>
       <Button fx:id="backButton" layoutX="709.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#backbuttons" prefHeight="60.0" prefWidth="167.0" text="Back" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font size="24.0" />
@@ -22,6 +27,11 @@
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/spacebar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="648.0" fitWidth="745.0" layoutX="-57.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/sparklelose.gif" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="52.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Goal: Get at least $10,000 worth of items and exit before time runs out!" wrappingWidth="852.341796875">

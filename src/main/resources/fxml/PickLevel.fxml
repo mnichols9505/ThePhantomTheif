@@ -9,12 +9,22 @@
 
 <AnchorPane prefHeight="600" prefWidth="900.0" style="-fx-background-color: #280D4B;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neumont.csc150.Screen.PickYourPoison">
    <children>
-      <Button fx:id="gameButton" onMouseClicked="#gameClick" layoutX="312.0" layoutY="259.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="277.0" text="Cyanide">
+      <ImageView fitHeight="699.0" fitWidth="773.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/purple.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="594.0" fitWidth="679.0" layoutX="197.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/purple.gif" />
+         </image>
+      </ImageView>
+      <Button fx:id="gameButton" layoutX="312.0" layoutY="259.0" mnemonicParsing="false" onMouseClicked="#gameClick" prefHeight="74.0" prefWidth="277.0" text="Cyanide">
          <font>
             <Font size="32.0" />
          </font>
       </Button>
-      <Button fx:id="gameButton1" onMouseClicked="#gameClickHard" layoutX="312.0" layoutY="428.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="277.0" text="Polonium">
+      <Button fx:id="gameButton1" layoutX="312.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#gameClickHard" prefHeight="74.0" prefWidth="277.0" text="Polonium">
          <font>
             <Font size="32.0" />
          </font>
@@ -27,7 +37,7 @@
          <font>
             <Font name="Bodoni MT Italic" size="45.0" />
          </font></Text>
-      <ImageView fitHeight="326.0" fitWidth="627.0" layoutX="136.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="326.0" fitWidth="627.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Poison.PNG" />
          </image>
