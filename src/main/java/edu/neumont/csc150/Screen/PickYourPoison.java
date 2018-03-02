@@ -25,6 +25,7 @@ public class PickYourPoison extends Application{
 
 
     public void start(Stage stage) throws Exception {
+
         Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/PickLevel.fxml"));
         Group rootTime = new Group();
         Scene scene = new Scene(root);
@@ -55,28 +56,30 @@ public class PickYourPoison extends Application{
     Button gameButton1;
 
     public void gameClick(MouseEvent event) throws Exception {
-
-        Stage stage = (Stage) gameButton.getScene().getWindow();
         CountDown easy = new CountDown();
+        easy.doTime();
+        Stage stage = (Stage) gameButton.getScene().getWindow();
+
         easy.setPoison(true);
         stage.close();
         MainGameS1 game= new MainGameS1();
         game.start(MainGameS1.Gamestage);
 
 
-        easy.doTime();
+
 
     }
 
     public void gameClickHard(MouseEvent event) throws Exception {
-
-        Stage stage = (Stage) gameButton.getScene().getWindow();
         CountDown hard = new CountDown();
+        hard.doHardTime();
+        Stage stage = (Stage) gameButton.getScene().getWindow();
+
         hard.setPoison(false);
         stage.close();
         MainGameS1 game= new MainGameS1();
         game.start(MainGameS1.Gamestage);
 
-        hard.doHardTime();
+
     }
 }
