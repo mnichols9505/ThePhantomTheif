@@ -465,5 +465,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         looser.start(Looser.lose);
         System.out.println(this.c.secondStage);
         this.c.secondStage.close();
+        this.c.secondStageHard.close();
+
     }
 }

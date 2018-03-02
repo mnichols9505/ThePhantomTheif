@@ -62,8 +62,8 @@ public class CountDown extends Application {
 
      // Group root = new Group();
 
-        stage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
-        stage.show();
+//        stage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
+//        stage.show();
     }
 
     public void doTime() {
@@ -150,52 +150,6 @@ public class CountDown extends Application {
 
     }
 
-    public void do3Time() {
-
-
-
-
-        time.setCycleCount(Timeline.INDEFINITE);
-        if (time != null) {
-            time.stop();
-        }
-        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                secondsStart--;
-
-                if (label != null) {
-                    label.setText("READY?: " + secondsStart.toString());
-                }
-                if (secondsStart <= 0) {
-                    time.stop();
-                    secondStage3.close();
-
-
-                }
-            }
-
-        });
-        time.getKeyFrames().add(frame);
-        time.playFromStart();
-        time.play();
-        secondStage3.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
-        label = new Label();
-        label.setTextFill(Color.WHITESMOKE);
-        label.setFont(Font.font(120));
-        secondStage3.setTitle("READY?");
-        secondStage3.setX(700);
-        secondStage3.setY(630);
-        hbox.getChildren().add(label);
-        root.getChildren().add(hbox);
-        hbox.setAlignment(Pos.BOTTOM_RIGHT);
-        secondStage3.setScene(new Scene(root, 800, 200, Color.DARKSALMON));
-        secondStage3.show();
-
-        System.out.println(secondStage3 + "!!");
-
-
-    }
     public void close(boolean x) {
         if (x) {
             Stage stage = (Stage) label.getScene().getWindow();

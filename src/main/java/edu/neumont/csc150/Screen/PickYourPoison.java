@@ -20,6 +20,7 @@ public class PickYourPoison extends Application{
     private Label label;
     static Stage levelPick = new Stage();
     static Stage Timer = new Stage();
+    StartCountDown s = new StartCountDown();
 
 
 
@@ -64,7 +65,8 @@ public class PickYourPoison extends Application{
         stage.close();
         MainGameS1 game= new MainGameS1();
         game.start(MainGameS1.Gamestage);
-        c.do3Time();
+        s.start(StartCountDown.secondStage3);
+
 
 
 
@@ -79,7 +81,6 @@ public class PickYourPoison extends Application{
         stage.close();
         MainGameS1 game= new MainGameS1();
         game.start(MainGameS1.Gamestage);
-        c.do3Time();
-
+        s.start(StartCountDown.secondStage3);
     }
 }
