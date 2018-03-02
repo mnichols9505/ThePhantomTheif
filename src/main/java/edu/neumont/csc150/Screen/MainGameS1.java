@@ -33,7 +33,7 @@ public class MainGameS1 extends Application {
 
     static Stage Gamestage = new Stage();
 
-    String musicFile = "song1.mp3";
+    String musicFile = "title.mp3";
 
     public void start(Stage stage) throws Exception {
 

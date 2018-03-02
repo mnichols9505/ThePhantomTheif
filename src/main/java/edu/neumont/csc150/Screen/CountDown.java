@@ -36,6 +36,7 @@ public class CountDown extends Application {
     private Integer startStart = 3;
     private Integer secondsStart = startStart;
     private Label timerLabel;
+
     Group root = new Group();
     public Stage secondStage = new Stage();
 
