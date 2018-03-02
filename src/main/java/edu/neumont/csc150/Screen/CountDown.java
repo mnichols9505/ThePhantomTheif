@@ -80,6 +80,7 @@ public class CountDown extends Application {
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(22));
 
+
         secondStage.setX(0);
         secondStage.setY(0);
         HBox hbox = new HBox(5);
@@ -90,6 +91,7 @@ public class CountDown extends Application {
         hbox.setEffect(blur);
         root.getChildren().add(hbox);
         secondStage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
+
         secondStage.show();
     }
     public void doHardTime() {

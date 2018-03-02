@@ -18,15 +18,22 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.File;
+
 public class MainGameS1 extends Application {
 
     static Stage Gamestage = new Stage();
+
+    public String musicFile = "song1.wav";
+
 
     public void start(Stage stage) throws Exception {
 
@@ -46,6 +53,10 @@ public class MainGameS1 extends Application {
         CharacterMove dude = loader.getController();
         scene.setOnKeyPressed(dude);
         dude.init();
+
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
     }
 
 }
