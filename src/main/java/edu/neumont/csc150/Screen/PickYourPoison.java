@@ -32,7 +32,7 @@ public class PickYourPoison extends Application{
 
         levelPick = stage;
 
-
+        //Pick Difficulty
         levelPick.setScene(scene);
         levelPick.setTitle("The Phantom Thief");
         levelPick.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
