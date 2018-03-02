@@ -183,9 +183,25 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             ballx *= 0;
             return true;
         }
+        if (vX == 2 || vY == 2) {
+
+
+
+
+        }else if (collideRec(rectone) || collideRec(recttwo) || collideRec(rectthree) || collideRec(rectfour) || collideRec(rectfive) || collideRec(rectsix) || collideRec(rectseven) || collideRec(recteight) || collideRec(rectnine)) {
+            slow();
+        }
+
 
         return false;
 
+    }
+
+
+
+    public void slow(){
+        vX -= 2;
+        vY -= 2;
     }
 
     public boolean Hardcheckbounce() {
