@@ -433,10 +433,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     public void checkWin() throws Exception {
         if (sell.checkMoney()) {
             win();
-            c.secondStage.close();
+
         } else {
             loose();
-            c.secondStage.close();
+
         }
     }
 
@@ -463,5 +463,6 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         stage.close();
         looser.start(Looser.lose);
         c.secondStage.close();
+
     }
 }

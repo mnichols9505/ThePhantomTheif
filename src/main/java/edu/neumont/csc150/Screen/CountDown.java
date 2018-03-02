@@ -1,5 +1,6 @@
 package edu.neumont.csc150.Screen;
 
+import edu.neumont.csc150.Character.CharacterMove;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -110,6 +111,8 @@ public class CountDown extends Application {
                 if (secondsHard <= 0) {
                     time.stop();
                     close();
+                    secondStage.close();
+
                 }
             }
 
@@ -151,6 +154,8 @@ public class CountDown extends Application {
                 if (secondsStart <= 0) {
                     time.stop();
                     secondStage.close();
+                    CharacterMove cm = new CharacterMove();
+
                 }
             }
 
