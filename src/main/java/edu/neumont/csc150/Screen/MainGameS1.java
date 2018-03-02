@@ -68,6 +68,7 @@ public class MainGameS1 extends Application {
     public void gameClose(){
         Stage stage = (Stage) Gamestage.getScene().getWindow();
         stage.close();
+
     }
     //
 
