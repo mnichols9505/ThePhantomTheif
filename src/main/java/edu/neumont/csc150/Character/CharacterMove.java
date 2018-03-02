@@ -368,10 +368,6 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @Override
     public void handle(KeyEvent e) {
 
-
-        if (e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
-
-
                 if (e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
 
                     System.out.println("UP key was pressed");
@@ -409,7 +405,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
                     pickup();
 
                 }
-        }
+
     }
 
     public void checkWin() throws Exception {
