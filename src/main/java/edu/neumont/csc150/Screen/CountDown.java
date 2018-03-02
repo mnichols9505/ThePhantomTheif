@@ -36,8 +36,13 @@ public class CountDown extends Application {
     private Integer startStart = 3;
     private Integer secondsStart = startStart;
     private Label timerLabel;
+
+    HBox hbox = new HBox(5);
     Group root = new Group();
+
     public Stage secondStage = new Stage();
+    public Stage secondStageHard = new Stage();
+    public Stage secondStage3 = new Stage();
 
     public Timeline time = new Timeline();
 
@@ -55,13 +60,14 @@ public class CountDown extends Application {
                 getClass().getResource("Gameplay.fxml")
         );
 
-      Group root = new Group();
+     // Group root = new Group();
 
         stage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
         stage.show();
     }
 
     public void doTime() {
+        System.out.println("in doTime");
         poison = true;
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
@@ -77,7 +83,7 @@ public class CountDown extends Application {
         time.getKeyFrames().add(frame);
         time.playFromStart();
         time.play();
-        Stage secondStage = new Stage();
+
         label = new Label();
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(22));
@@ -85,7 +91,7 @@ public class CountDown extends Application {
         secondStage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
         secondStage.setX(0);
         secondStage.setY(0);
-        HBox hbox = new HBox(5);
+
         GaussianBlur blur = new GaussianBlur(0.0);
         hbox.setAlignment(Pos.BASELINE_RIGHT);
         secondStage.setTitle("CountDown 90 Seconds");
@@ -96,10 +102,12 @@ public class CountDown extends Application {
         secondStage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
 
         secondStage.show();
+
+        System.out.println("ss " + secondStage);
     }
     public void doHardTime() {
         poison = true;
-        HBox hbox = new HBox(5);
+
 
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
@@ -116,7 +124,7 @@ public class CountDown extends Application {
                 if (secondsHard <= 0) {
                     time.stop();
                     close(true);
-                    secondStage.close();
+                    secondStageHard.close();
 
                 }
             }
@@ -130,21 +138,22 @@ public class CountDown extends Application {
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(22));
         secondStage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
-        secondStage.setX(0);
-        secondStage.setY(0);
-        secondStage.setTitle("CountDown 30 Seconds");
+        secondStageHard.setX(0);
+        secondStageHard.setY(0);
+        secondStageHard.setTitle("CountDown 30 Seconds");
         hbox.getChildren().add(label);
         root.getChildren().add(hbox);
         hbox.setAlignment(Pos.BOTTOM_RIGHT);
-        secondStage.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
-        secondStage.show();
+        secondStageHard.setScene(new Scene(root, 300, 70, Color.BLUEVIOLET));
+        secondStageHard.show();
+
 
     }
 
     public void do3Time() {
 
 
-        HBox hbox = new HBox(5);
+
 
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
@@ -160,8 +169,8 @@ public class CountDown extends Application {
                 }
                 if (secondsStart <= 0) {
                     time.stop();
-                    secondStage.close();
-                    CharacterMove cm = new CharacterMove();
+                    secondStage3.close();
+
 
                 }
             }
@@ -170,18 +179,20 @@ public class CountDown extends Application {
         time.getKeyFrames().add(frame);
         time.playFromStart();
         time.play();
-        secondStage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
+        secondStage3.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
         label = new Label();
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(120));
-        secondStage.setTitle("READY?");
-        secondStage.setX(700);
-        secondStage.setY(630);
+        secondStage3.setTitle("READY?");
+        secondStage3.setX(700);
+        secondStage3.setY(630);
         hbox.getChildren().add(label);
         root.getChildren().add(hbox);
         hbox.setAlignment(Pos.BOTTOM_RIGHT);
-        secondStage.setScene(new Scene(root, 800, 200, Color.DARKSALMON));
-        secondStage.show();
+        secondStage3.setScene(new Scene(root, 800, 200, Color.DARKSALMON));
+        secondStage3.show();
+
+        System.out.println(secondStage3 + "!!");
 
 
     }

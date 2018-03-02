@@ -37,7 +37,7 @@ import static edu.neumont.csc150.Screen.WinScreen.win;
 
 
 public class CharacterMove implements EventHandler <KeyEvent> {
-    CountDown c = new CountDown();
+    private CountDown c = new CountDown();
 
     @FXML
     private Canvas mainCanvas;
@@ -463,5 +463,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         looser.start(Looser.lose);
+        System.out.println(this.c.secondStage);
+        this.c.secondStage.close();
     }
 }
