@@ -36,6 +36,7 @@ public class CountDown extends Application {
     private Label timerLabel;
     Group root = new Group();
     public Stage secondStage = new Stage();
+    public Timeline time = new Timeline();
 
     public boolean isPoison() {
         return poison;
@@ -59,7 +60,6 @@ public class CountDown extends Application {
 
     public void doTime() {
         poison = true;
-        Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
             time.stop();
@@ -67,16 +67,7 @@ public class CountDown extends Application {
         KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                seconds--;
-
-
-                if (label != null) {
-                    label.setText("Countdown: " + seconds.toString());
-                }
-                if (seconds <= 0) {
-                    time.stop();
-
-                }
+                clock();
             }
         });
 
@@ -103,7 +94,7 @@ public class CountDown extends Application {
     public void doHardTime() {
         poison = true;
         HBox hbox = new HBox(5);
-        Timeline time = new Timeline();
+
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
             time.stop();
@@ -118,7 +109,7 @@ public class CountDown extends Application {
                 }
                 if (secondsHard <= 0) {
                     time.stop();
-
+                    close();
                 }
             }
 
@@ -144,7 +135,7 @@ public class CountDown extends Application {
     public void do3Time() {
 
         HBox hbox = new HBox(5);
-        Timeline time = new Timeline();
+
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
             time.stop();
@@ -181,6 +172,29 @@ public class CountDown extends Application {
         secondStage.show();
 
 
+    }
+    public void close() {
+        Stage stage = (Stage) label.getScene().getWindow() ;
+        stage.close();
+        Looser looser = new Looser();
+        try {
+            looser.start(Looser.lose);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void clock() {
+        seconds--;
+
+
+        if (label != null) {
+            label.setText("Countdown: " + seconds.toString());
+        }
+        if (seconds <= 0) {
+            time.stop();
+            close();
+
+        }
     }
     }
 

@@ -92,7 +92,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     private ImageView person = new ImageView(p);
 
     @FXML
-    private void initialize() {
+    private void initialize() throws Exception {
         moneytwo.setStyle("-fx-font: 26 arial;");
         moneytwo.setText("Money: ");
         moneytwo.setTextFill(Color.WHITESMOKE);
@@ -123,13 +123,19 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     public void init() {
         makeItem();
-        Timeline timer = new Timeline(new KeyFrame(Duration.millis(10), e -> draw()));
+        Timeline timer = new Timeline(new KeyFrame(Duration.millis(10), e -> {
+            try {
+                draw();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }));
 
         timer.setCycleCount(Timeline.INDEFINITE);
         timer.play();
     }
 
-    public void draw() {
+    public void draw() throws Exception {
         GraphicsContext gc = mainCanvas.getGraphicsContext2D();
 
         gc.setFill(Color.rgb(40, 13, 75));
