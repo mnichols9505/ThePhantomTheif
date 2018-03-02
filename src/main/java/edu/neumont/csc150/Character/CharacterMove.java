@@ -32,6 +32,8 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static edu.neumont.csc150.Screen.WinScreen.win;
+
 
 public class CharacterMove implements EventHandler <KeyEvent> {
 
@@ -100,7 +102,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
-    private void makeItem(){
+    private void makeItem() {
 
         one.setImage(items.getItems().get(0).getImage());
         two.setImage(items.getItems().get(1).getImage());
@@ -118,6 +120,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
 
     }
+
     public void init() {
         makeItem();
         Timeline timer = new Timeline(new KeyFrame(Duration.millis(10), e -> draw()));
@@ -129,22 +132,17 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     public void draw() {
         GraphicsContext gc = mainCanvas.getGraphicsContext2D();
 
-        gc.setFill(Color.rgb(40,13,75));
-        gc.fillRect(0,0,this.mainCanvas.getWidth(),this.mainCanvas.getHeight());
+        gc.setFill(Color.rgb(40, 13, 75));
+        gc.fillRect(0, 0, this.mainCanvas.getWidth(), this.mainCanvas.getHeight());
 
-        gc.drawImage(exit.getImage(),exitx,exity);
+        gc.drawImage(exit.getImage(), exitx, exity);
 
-        gc.drawImage(person.getImage(),ballx,bally,ballwidth,ballheight);
+        gc.drawImage(person.getImage(), ballx, bally, ballwidth, ballheight);
 
         this.initialize();
 
 
-
     }
-
-
-
-
 
 
     @FXML
@@ -166,72 +164,56 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @FXML
     public Rectangle rectnine;
 
-    public boolean checkbounce(){
-        if (bally + ballheight >= this.mainCanvas.getHeight()){
+    public boolean checkbounce() {
+        if (bally + ballheight >= this.mainCanvas.getHeight()) {
             bally = bally - vY;
             return true;
         }
-        if (ballx + ballwidth >= this.mainCanvas.getWidth()){
+        if (ballx + ballwidth >= this.mainCanvas.getWidth()) {
             ballx = ballx - vX;
             return true;
         }
-        if(bally <=0){
+        if (bally <= 0) {
 //            vY*=-1;
             bally *= 0;
             return true;
         }
-        if(ballx <= 0){
+        if (ballx <= 0) {
 //            vX *=-1;
             ballx *= 0;
             return true;
         }
-        if(collideRec(rectone)){
-            if(bally + ballheight >= rectone.getHeight() ){
-                bally = bally - vY;
-            }
-           if(ballx + ballheight >= rectone.getWidth()){
-               ballx = ballx + vX;
-           }
-           if( rectone.getLayoutX() + rectone.getWidth() <= ballx){
-               System.out.println("hewwo");
-
-           }
-
-        }
 
         return false;
 
     }
-    public boolean Hardcheckbounce(){
-        if(bally + ballheight >= this.mainCanvas.getHeight() || bally <=0){
-            vY*=-1;
+
+    public boolean Hardcheckbounce() {
+        if (bally + ballheight >= this.mainCanvas.getHeight() || bally <= 0) {
+            vY *= -1;
             return true;
         }
-        if(ballx + ballwidth >= this.mainCanvas.getWidth() || ballx <= 0){
-            vX *=-1;
+        if (ballx + ballwidth >= this.mainCanvas.getWidth() || ballx <= 0) {
+            vX *= -1;
             return true;
         }
         return false;
 
     }
 
-    private int addMonies(int x){
+    private int addMonies(int x) {
         return items.getItems().get(x).getValue();
     }
 
 
-
-
-
-
-    public void pickup(){
+    public void pickup() {
         //Find out the position and see if an image is in that position
         //Make image invisiable so the person cannot click it
         //Add up currency
 
-        if(collide(one)){
+        if (collide(one)) {
             System.out.println("Cox");
-            if(one.getImage() != null){
+            if (one.getImage() != null) {
                 one.setImage(null);
                 sell.addMoney(addMonies(0));
                 try {
@@ -243,96 +225,96 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             one.setVisible(false);
 
         }
-        if(collide(two)){
+        if (collide(two)) {
             System.out.println("2");
-            if(two.getImage() != null) {
+            if (two.getImage() != null) {
                 two.setImage(null);
                 sell.addMoney(addMonies(1));
             }
             two.setVisible(false);  //makes items disapear
 
         }
-        if(collide(three)){
+        if (collide(three)) {
             System.out.println("3");
-            if(three.getImage() != null) {
+            if (three.getImage() != null) {
                 three.setImage(null);
                 sell.addMoney(addMonies(2));
             }
             three.setVisible(false);
         }
 
-        if(collide(four)){
+        if (collide(four)) {
             System.out.println("4");
-            if(four.getImage() != null) {
+            if (four.getImage() != null) {
                 four.setImage(null);
                 sell.addMoney(addMonies(3));
             }
             four.setVisible(false);
         }
-        if(collide(five)){
+        if (collide(five)) {
             System.out.println("5");
-            if(five.getImage() != null) {
+            if (five.getImage() != null) {
                 five.setImage(null);
                 sell.addMoney(addMonies(4));
             }
             five.setVisible(false);
         }
-        if(collide(six)){
+        if (collide(six)) {
             System.out.println("6");
-            if(six.getImage() != null) {
+            if (six.getImage() != null) {
                 six.setImage(null);
                 sell.addMoney(addMonies(5));
             }
             six.setVisible(false);
         }
-        if(collide(seven)){
+        if (collide(seven)) {
             System.out.println("7");
-            if(seven.getImage() != null) {
+            if (seven.getImage() != null) {
                 seven.setImage(null);
                 sell.addMoney(addMonies(6));
             }
             seven.setVisible(false);
         }
-        if(collide(eight)){
+        if (collide(eight)) {
             System.out.println("8");
-            if(eight.getImage() != null) {
+            if (eight.getImage() != null) {
                 eight.setImage(null);
                 sell.addMoney(addMonies(7));
             }
             eight.setVisible(false);
         }
-        if(collide(nine)){
+        if (collide(nine)) {
             System.out.println("9");
             sell.addMoney(addMonies(8));
             nine.setVisible(false);
         }
-        if(collide(ten)){
+        if (collide(ten)) {
             System.out.println("10");
-            if(ten.getImage() != null) {
+            if (ten.getImage() != null) {
                 ten.setImage(null);
                 sell.addMoney(addMonies(9));
             }
             ten.setVisible(false);
         }
-        if(collide(eleven)){
+        if (collide(eleven)) {
             System.out.println("11");
-            if(eleven.getImage() != null) {
+            if (eleven.getImage() != null) {
                 eleven.setImage(null);
                 sell.addMoney(addMonies(10));
             }
             eleven.setVisible(false);
         }
-        if(collide(twelve)){
+        if (collide(twelve)) {
             System.out.println("12");
-            if(twelve.getImage() != null) {
+            if (twelve.getImage() != null) {
                 twelve.setImage(null);
                 sell.addMoney(addMonies(11));
             }
             twelve.setVisible(false);
         }
-        if(collide(thirteen)){
+        if (collide(thirteen)) {
             System.out.println("13");
-            if(thirteen.getImage() != null) {
+            if (thirteen.getImage() != null) {
                 thirteen.setImage(null);
                 sell.addMoney(addMonies(12));
             }
@@ -350,115 +332,112 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
-    public Rectangle2D getBoundary(ImageView x){
-        return new Rectangle2D(x.getLayoutX(),x.getLayoutY(),x.getFitWidth(),x.getFitHeight());
+    public Rectangle2D getBoundary(ImageView x) {
+        return new Rectangle2D(x.getLayoutX(), x.getLayoutY(), x.getFitWidth(), x.getFitHeight());
     }
 
-    public Rectangle2D perGetBoundary(){
-        return new Rectangle2D(ballx,bally,ballwidth,ballheight);
-    }
-    public Rectangle2D getRecBoundary(Rectangle x){
-        return new Rectangle2D(x.getLayoutX(),x.getLayoutY(),x.getWidth(),x.getHeight());
+    public Rectangle2D perGetBoundary() {
+        return new Rectangle2D(ballx, bally, ballwidth, ballheight);
     }
 
-    public boolean collide(ImageView x){
+    public Rectangle2D getRecBoundary(Rectangle x) {
+        return new Rectangle2D(x.getLayoutX(), x.getLayoutY(), x.getWidth(), x.getHeight());
+    }
+
+    public boolean collide(ImageView x) {
         return perGetBoundary().intersects(getBoundary(x));
     }
 
-    public boolean collideRec(Rectangle x){
+    public boolean collideRec(Rectangle x) {
         return perGetBoundary().intersects(getRecBoundary(x));
     }
-    public Rectangle2D exitSign(){
-        return new Rectangle2D(exitx,exity,exitwidth,exitheight);
+
+    public Rectangle2D exitSign() {
+        return new Rectangle2D(exitx, exity, exitwidth, exitheight);
     }
-    public boolean IntersectRec(Rectangle x){
+
+    public boolean IntersectRec(Rectangle x) {
         return personColideRec().intersects(x.getBoundsInParent());
     }
-    public Rectangle personColideRec(){
-        return new Rectangle(ballx,bally,ballwidth,ballheight);
+
+    public Rectangle personColideRec() {
+        return new Rectangle(ballx, bally, ballwidth, ballheight);
     }
-
-
 
 
     @Override
     public void handle(KeyEvent e) {
 
 
-            if(e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
-                temp = e;
-        if(walls()) {
-            if (e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
-
-                System.out.println("UP key was pressed");
-                this.checkbounce();
-                collideRec(rectone);
-                bally -=vY;
-
-            }
-            if(e.getCode().equals(KeyCode.DOWN)|| e.getCode().equals(KeyCode.S)){
-                System.out.println("Down key was pressed");
-
-                this.checkbounce();
-                bally +=vY;
+        if (e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
 
 
-            }
-             if(e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)){
-            System.out.println("Left key was pressed");
+                if (e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
 
-                this.checkbounce();
-                ballx-=vX;
+                    System.out.println("UP key was pressed");
+                    this.checkbounce();
+                    bally -= vY;
 
+                }
+                if (e.getCode().equals(KeyCode.DOWN) || e.getCode().equals(KeyCode.S)) {
+                    System.out.println("Down key was pressed");
 
-            }
-             if(e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)){
-            System.out.println("Right key was pressed");
-
-                this.checkbounce();
-                ballx+=vX;
+                    this.checkbounce();
+                    bally += vY;
 
 
-            }
+                }
+                if (e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)) {
+                    System.out.println("Left key was pressed");
 
-        if(e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
-            System.out.println("Space key was pressed");
-                pickup();
+                    this.checkbounce();
+                    ballx -= vX;
 
+
+                }
+                if (e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)) {
+                    System.out.println("Right key was pressed");
+
+                    this.checkbounce();
+                    ballx += vX;
+
+
+                }
+
+                if (e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
+                    System.out.println("Space key was pressed");
+                    pickup();
+
+                }
         }
-            }
-
-
-
     }
 
     public void checkWin() throws Exception {
-        if (sell.checkMoney()){
+        if (sell.checkMoney()) {
             win();
-        }else {
+        } else {
             loose();
         }
     }
 
-    public void winCox() throws Exception {
+    public void winCox () throws Exception {
         CoxFound coxFound = new CoxFound();
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         coxFound.start(CoxFound.cox);
     }
 
-    public void win() throws Exception {
+    public void win () throws Exception {
         WinScreen winScreen = new WinScreen();
         Stage stage = (Stage) this.recttwo.getScene().getWindow();
         stage.close();
         winScreen.start(WinScreen.win);
     }
 
-    public void loose() throws Exception {
+    public void loose () throws Exception {
         Looser looser = new Looser();
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         looser.start(Looser.lose);
     }
-
 }
