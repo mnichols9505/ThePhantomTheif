@@ -442,13 +442,13 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
 
 
-    private KeyEvent temp;
+
     @Override
     public void handle(KeyEvent e) {
 
         if(walls()) {
             if (e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
-                temp = e;
+
                 System.out.println("UP key was pressed");
                 this.checkbounce();
                 collideRec(rectone);
@@ -487,10 +487,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
                 pickup();
 
             }
-        }
-        else{
 
-        }
+
 
     }
 
