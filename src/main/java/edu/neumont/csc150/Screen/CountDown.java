@@ -15,6 +15,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.effect.Shadow;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -37,6 +38,7 @@ public class CountDown extends Application {
     private Label timerLabel;
     Group root = new Group();
     public Stage secondStage = new Stage();
+
     public Timeline time = new Timeline();
 
     public boolean isPoison() {
@@ -80,12 +82,13 @@ public class CountDown extends Application {
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(22));
 
-
+        secondStage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
         secondStage.setX(0);
         secondStage.setY(0);
         HBox hbox = new HBox(5);
         GaussianBlur blur = new GaussianBlur(0.0);
         hbox.setAlignment(Pos.BASELINE_RIGHT);
+        secondStage.setTitle("CountDown 90 Seconds");
         hbox.getChildren().add(label);
         hbox.setLayoutX(48);
         hbox.setEffect(blur);
@@ -126,9 +129,10 @@ public class CountDown extends Application {
         label = new Label();
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(22));
-
+        secondStage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
         secondStage.setX(0);
         secondStage.setY(0);
+        secondStage.setTitle("CountDown 30 Seconds");
         hbox.getChildren().add(label);
         root.getChildren().add(hbox);
         hbox.setAlignment(Pos.BOTTOM_RIGHT);
@@ -141,6 +145,7 @@ public class CountDown extends Application {
 
 
         HBox hbox = new HBox(5);
+
 
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
@@ -166,7 +171,7 @@ public class CountDown extends Application {
         time.getKeyFrames().add(frame);
         time.playFromStart();
         time.play();
-
+        secondStage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
         label = new Label();
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(120));

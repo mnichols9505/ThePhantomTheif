@@ -7,6 +7,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -346,7 +347,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             System.out.println("exit");
             try {
                 checkWin();
-                c.close(false);
+
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
@@ -462,5 +463,6 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         looser.start(Looser.lose);
+        
     }
 }
