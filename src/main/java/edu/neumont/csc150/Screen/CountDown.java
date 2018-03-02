@@ -35,6 +35,7 @@ public class CountDown extends Application {
     private Integer secondsStart = startStart;
     private Label timerLabel;
     Group root = new Group();
+    public Stage secondStage = new Stage();
 
     public boolean isPoison() {
         return poison;
@@ -125,7 +126,7 @@ public class CountDown extends Application {
         time.getKeyFrames().add(frame);
         time.playFromStart();
         time.play();
-        Stage secondStage = new Stage();
+
         label = new Label();
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(22));
@@ -141,7 +142,7 @@ public class CountDown extends Application {
     }
 
     public void do3Time() {
-        Stage secondStage = new Stage();
+
         HBox hbox = new HBox(5);
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
@@ -154,7 +155,7 @@ public class CountDown extends Application {
                 secondsStart--;
 
                 if (label != null) {
-                    label.setText("Countdown: " + secondsStart.toString());
+                    label.setText("READY?: " + secondsStart.toString());
                 }
                 if (secondsStart <= 0) {
                     time.stop();
@@ -169,14 +170,14 @@ public class CountDown extends Application {
 
         label = new Label();
         label.setTextFill(Color.WHITESMOKE);
-        label.setFont(Font.font(22));
+        label.setFont(Font.font(120));
         secondStage.setTitle("READY?");
-        secondStage.setX(0);
-        secondStage.setY(0);
+        secondStage.setX(700);
+        secondStage.setY(630);
         hbox.getChildren().add(label);
         root.getChildren().add(hbox);
         hbox.setAlignment(Pos.BOTTOM_RIGHT);
-        secondStage.setScene(new Scene(root, 300, 70, Color.DARKSALMON));
+        secondStage.setScene(new Scene(root, 800, 200, Color.DARKSALMON));
         secondStage.show();
 
 

@@ -36,7 +36,7 @@ import static edu.neumont.csc150.Screen.WinScreen.win;
 
 
 public class CharacterMove implements EventHandler <KeyEvent> {
-
+    CountDown c = new CountDown();
 
     @FXML
     private Canvas mainCanvas;
@@ -427,8 +427,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     public void checkWin() throws Exception {
         if (sell.checkMoney()) {
             win();
+            c.secondStage.close();
         } else {
             loose();
+            c.secondStage.close();
         }
     }
 
@@ -437,6 +439,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         coxFound.start(CoxFound.cox);
+        c.secondStage.close();
     }
 
     public void win () throws Exception {
@@ -444,6 +447,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         Stage stage = (Stage) this.recttwo.getScene().getWindow();
         stage.close();
         winScreen.start(WinScreen.win);
+
+        c.secondStage.close();
     }
 
     public void loose () throws Exception {
@@ -451,5 +456,6 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         looser.start(Looser.lose);
+        c.secondStage.close();
     }
 }
