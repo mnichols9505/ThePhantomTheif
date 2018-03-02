@@ -38,6 +38,7 @@ public class MainGameS1 extends Application {
     public void start(Stage stage) throws Exception {
 
 
+
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/Gameplay.fxml"));
         Parent root = loader.load();
 
