@@ -110,7 +110,7 @@ public class CountDown extends Application {
                 }
                 if (secondsHard <= 0) {
                     time.stop();
-                    close();
+                    close(true);
                     secondStage.close();
 
                 }
@@ -179,16 +179,21 @@ public class CountDown extends Application {
 
 
     }
-    public void close() {
-        Stage stage = (Stage) label.getScene().getWindow() ;
-        stage.close();
-        Looser looser = new Looser();
-        MainGameS1 gameS1= new MainGameS1();
-        try {
-            gameS1.gameClose();
-            looser.start(Looser.lose);
-        } catch (Exception e) {
-            e.printStackTrace();
+    public void close(boolean x) {
+        if (x) {
+            Stage stage = (Stage) label.getScene().getWindow();
+            stage.close();
+            Looser looser = new Looser();
+            MainGameS1 gameS1 = new MainGameS1();
+            try {
+                gameS1.gameClose();
+                looser.start(Looser.lose);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else {
+            Stage stage = (Stage) label.getScene().getWindow();
+            stage.close();
         }
     }
     public void clock() {
@@ -200,10 +205,11 @@ public class CountDown extends Application {
         }
         if (seconds <= 0) {
             time.stop();
-            close();
+            close(true);
 
         }
     }
+
     }
 
 
