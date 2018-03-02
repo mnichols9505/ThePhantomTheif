@@ -27,12 +27,12 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.File;
+import java.net.URL;
 
 public class MainGameS1 extends Application {
 
     static Stage Gamestage = new Stage();
 
-    public String musicFile = "song1.wav";
 
 
     public void start(Stage stage) throws Exception {
@@ -54,15 +54,6 @@ public class MainGameS1 extends Application {
         scene.setOnKeyPressed(dude);
         dude.init();
 
-        Media sound = new Media(new File(musicFile).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setOnEndOfMedia(new Runnable() {
-            @Override
-            public void run() {
-                mediaPlayer.seek(Duration.ZERO);
-            }
-        });
-        mediaPlayer.play();
     }
 
     public void gameClose(){
