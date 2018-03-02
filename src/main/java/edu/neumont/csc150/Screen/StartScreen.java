@@ -58,6 +58,7 @@ public class StartScreen extends Application {
         Tutorial tutorial = new Tutorial();
 
         tutorial.start(Tutorial.tutstage);
+        //HA Ha Ba
 
     }
 
