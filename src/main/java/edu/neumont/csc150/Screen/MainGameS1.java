@@ -33,7 +33,7 @@ public class MainGameS1 extends Application {
 
     static Stage Gamestage = new Stage();
 
-
+    String musicFile = "song1.mp3";
 
     public void start(Stage stage) throws Exception {
 
@@ -53,6 +53,17 @@ public class MainGameS1 extends Application {
         CharacterMove dude = loader.getController();
         scene.setOnKeyPressed(dude);
         dude.init();
+
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.setOnEndOfMedia(new Runnable(){
+            @Override
+            public void run() {
+                mediaPlayer.seek(Duration.ZERO);
+            }
+        });
+
+        mediaPlayer.play();
 
     }
 
