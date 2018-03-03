@@ -14,11 +14,16 @@ public class CoxFound extends Application {
 
 
         public static Stage cox = new Stage();
+
         @FXML
         public Button word;
 
-
-        public void start(Stage stage) throws Exception {
+    /**
+     * Starts the cox win screen.
+     * @param stage
+     * @throws Exception
+     */
+    public void start(Stage stage) throws Exception {
 
             Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/MrCoxFound.fxml"));
 
@@ -32,6 +37,11 @@ public class CoxFound extends Application {
 
         }
 
+    /**
+     * Starts the main screen when pressed the replay button
+     * @param event
+     * @throws Exception
+     */
         @FXML
         public void replay(MouseEvent event) throws Exception {
 

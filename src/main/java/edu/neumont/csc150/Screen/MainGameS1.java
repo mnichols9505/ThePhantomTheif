@@ -35,12 +35,25 @@ public class MainGameS1 extends Application {
     public static Stage Gamestage = new Stage();
     public static CountDown easy;
 
+    /**
+     * Default Constructor
+     */
+    public MainGameS1(){ }
 
-
+    /**
+     * Constructor for MainGameS1
+     * @param countDown - a timer
+     */
     public MainGameS1 (CountDown countDown){
+
         this.easy = countDown;
     }
 
+    /**
+     * Starts the game screen
+     * @param stage
+     * @throws Exception
+     */
     public void start(Stage stage) throws Exception {
 
 
@@ -64,15 +77,26 @@ public class MainGameS1 extends Application {
 
     }
 
+    /**
+     * Closes game Screen
+     */
     public void gameClose(){
         Stage stage = (Stage) Gamestage.getScene().getWindow();
         stage.close();
     }
-    //
+
+    /**
+     * returns easy
+     * @return easy
+     */
     public CountDown getEasy() {
         return easy;
     }
 
+    /**
+     * sets easy
+     * @param easy - Countdown
+     */
     public void setEasy(CountDown easy) {
         this.easy = easy;
     }

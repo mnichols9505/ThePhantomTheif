@@ -26,13 +26,18 @@ public class StartCountDown extends Application{
     private Integer startStart = 3;
     private Integer secondsStart = startStart;
     private HBox hbox = new HBox();
-    Group root = new Group();
+    public Group root = new Group();
 
+    /**
+     * Starts the timer screen with the countdown for game to start
+     * @param stage
+     */
     public void start(Stage stage){
 
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("Gameplay.fxml")
         );
+
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
             time.stop();

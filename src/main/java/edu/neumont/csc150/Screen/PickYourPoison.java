@@ -21,14 +21,15 @@ public class PickYourPoison extends Application {
     private Label label;
     static Stage levelPick = new Stage();
     static Stage Timer = new Stage();
-    StartCountDown s = new StartCountDown();
-    CountDown countDown = new CountDown();
+    public StartCountDown s = new StartCountDown();
+    public CountDown countDown = new CountDown();
 
 
-
-
-
-
+    /**
+     * Starts the pick your level screen
+     * @param stage
+     * @throws Exception
+     */
     public void start(Stage stage) throws Exception {
 
         Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/PickLevel.fxml"));
@@ -60,6 +61,11 @@ public class PickYourPoison extends Application {
     @FXML
     Button gameButton1;
 
+    /**
+     * When click easy it calls a new game screen and passes in the easy time clock
+     * @param event
+     * @throws Exception
+     */
     public void gameClick(MouseEvent event) throws Exception {
         MainGameS1 game= new MainGameS1(countDown);
         countDown.doTime();
@@ -74,6 +80,11 @@ public class PickYourPoison extends Application {
 
     }
 
+    /**
+     * When clicked on hard mode it sets the coundown for hard mode. It shows up the main game screen with hard mode clock.
+     * @param event
+     * @throws Exception
+     */
     public void gameClickHard(MouseEvent event) throws Exception {
         countDown.doHardTime();
         Stage stage = (Stage) gameButton.getScene().getWindow();

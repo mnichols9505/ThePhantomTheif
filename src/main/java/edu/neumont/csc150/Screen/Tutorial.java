@@ -16,6 +16,11 @@ public class Tutorial extends Application{
 
 static Stage tutstage = new Stage();
 
+    /**
+     * Tutorial screen is called and shows.
+     * @param stage
+     * @throws Exception
+     */
     public void start(Stage stage) throws Exception {
 
         Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/TutorialScreen.fxml"));
@@ -32,6 +37,11 @@ static Stage tutstage = new Stage();
     @FXML
     Button backButton;
 
+    /**
+     * If back button is pressed, The title screen is recalled again.
+     * @param event
+     * @throws Exception
+     */
     @FXML
     public void backbuttons(MouseEvent event) throws Exception {
 

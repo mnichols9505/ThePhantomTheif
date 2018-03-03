@@ -22,6 +22,11 @@ public class StartScreen extends Application {
     static Stage startstage = new Stage();
   //  String file = "title.mp3";
 
+    /**
+     * Starts the main title Screen
+     * @param stage
+     * @throws Exception
+     */
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/startmenu.fxml"));
 
@@ -53,6 +58,11 @@ public class StartScreen extends Application {
     @FXML
     private Label timerLabel;
 
+    /**
+     * When start is clicked, the title window closes and brings up the level screen.
+     * @param event
+     * @throws Exception
+     */
     @FXML
     public void startClick(MouseEvent event) throws Exception {
 
@@ -69,6 +79,11 @@ public class StartScreen extends Application {
     @FXML
     Button button;
 
+    /**
+     * When tutorial button is clicked, it closes the title screen and brings up the tutorial screen.
+     * @param event
+     * @throws Exception
+     */
     @FXML
     public void tutorialClick(MouseEvent event) throws Exception {
 

@@ -18,7 +18,11 @@ public class Looser extends Application {
     @FXML
     public Button word;
 
-
+    /**
+     * Starts the Looser screen
+     * @param stage
+     * @throws Exception
+     */
     public void start(Stage stage) throws Exception {
 
         Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/LosingScreen.fxml"));
@@ -33,6 +37,11 @@ public class Looser extends Application {
 
     }
 
+    /**
+     * Closes the screen and calls the main screen when pressed the replay button.
+     * @param event
+     * @throws Exception
+     */
     @FXML
     public void replay(MouseEvent event) throws Exception {
 

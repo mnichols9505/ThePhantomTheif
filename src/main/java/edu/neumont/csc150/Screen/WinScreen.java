@@ -14,7 +14,11 @@ public class WinScreen extends Application{
 
     public static Stage win = new Stage();
 
-
+    /**
+     * Win screen is called and showed
+     * @param stage
+     * @throws Exception
+     */
     public void start(Stage stage) throws Exception {
 
         Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/WinningScreen.fxml"));
@@ -32,6 +36,11 @@ public class WinScreen extends Application{
     @FXML
     public Button word;
 
+    /**
+     * Takes you back to the title screen when you click the replay button
+     * @param event
+     * @throws Exception
+     */
     @FXML
     public void replay(MouseEvent event) throws Exception {
 
