@@ -40,17 +40,15 @@ import static edu.neumont.csc150.Screen.WinScreen.win;
 
 
 public class CharacterMove implements EventHandler <KeyEvent> {
-    //   private CountDown c = new CountDown();
 
     @FXML
     private Canvas mainCanvas;
 
+
     private int ballx = 460, bally = 540, ballwidth = 50, ballheight = 50;
-
-
     private int vX = 20, vY = 20;
 
-    Sell sell = new Sell();
+    private Sell sell = new Sell();
 
     private CharacterPickUp items = new CharacterPickUp();
 
@@ -59,8 +57,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     private ImageView exit = new ImageView(e);
 
     private String musicFile = "title.mp3";
-    Media sound = new Media(new File(musicFile).toURI().toString());
-    MediaPlayer mediaPlayer = new MediaPlayer(sound);
+    private Media sound = new Media(new File(musicFile).toURI().toString());
+    private MediaPlayer mediaPlayer = new MediaPlayer(sound);
 
 
 
@@ -131,6 +129,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
+    /**
+     * Initalizes all the items in the game + the game.
+     */
     public void init() {
         makeItem();
         //playMusic(); //plays music
@@ -147,6 +148,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         timer.play();
     }
 
+    /**
+     * Draw out the game and places all the shapes positions.
+     * @throws Exception
+     */
     public void draw() throws Exception {
 
 
@@ -184,6 +189,11 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @FXML
     public Rectangle rectnine;
 
+    /**
+     * Checks the boundries of the canvas and sees if the main object collides with sides or objects around them.
+     * If they touch an object in the game this makes the object slow down.
+     * @return returns a boolean.
+     */
     public boolean checkbounce() {
         if (bally + ballheight >= this.mainCanvas.getHeight()) {
             bally = bally - vY;
@@ -203,12 +213,13 @@ public class CharacterMove implements EventHandler <KeyEvent> {
             ballx *= 0;
             return true;
         }
+
         if (vX == 2 || vY == 2) {
 
+            //do nothing
 
-
-
-        }else if (collideRec(rectone) || collideRec(recttwo) || collideRec(rectthree) || collideRec(rectfour) || collideRec(rectfive) || collideRec(rectsix) || collideRec(rectseven) || collideRec(recteight) || collideRec(rectnine)) {
+        }
+        else if (collideRec(rectone) || collideRec(recttwo) || collideRec(rectthree) || collideRec(rectfour) || collideRec(rectfive) || collideRec(rectsix) || collideRec(rectseven) || collideRec(recteight) || collideRec(rectnine)) {
             slow();
         }
 
@@ -218,30 +229,22 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     }
 
 
-
+    /**
+     * slows down the speed of the main object
+     */
     public void slow(){
         vX -= 2;
         vY -= 2;
-    }
-
-    public boolean Hardcheckbounce() {
-        if (bally + ballheight >= this.mainCanvas.getHeight() || bally <= 0) {
-            vY *= -1;
-            return true;
-        }
-        if (ballx + ballwidth >= this.mainCanvas.getWidth() || ballx <= 0) {
-            vX *= -1;
-            return true;
-        }
-        return false;
-
     }
 
     private int addMonies(int x) {
         return items.getItems().get(x).getValue();
     }
 
-
+    /**
+     * Finds out the position and sees if an image/object is in the position.
+     * Makes said object in position null and adds the money up by calling sell.addMoney();
+     */
     public void pickup() {
         //Find out the position and see if an image is in that position
         //Make image invisiable so the person cannot click it
@@ -369,39 +372,79 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
+    /**
+     * return a new Rectangle2D if passed in an image
+     * @param x - Imageview
+     * @return Rectangle2D
+     */
     public Rectangle2D getBoundary(ImageView x) {
         return new Rectangle2D(x.getLayoutX(), x.getLayoutY(), x.getFitWidth(), x.getFitHeight());
     }
 
+    /**
+     * takes the main object/image and returns a new Rectangle2D
+     * @return Rectangle2D
+     */
     public Rectangle2D perGetBoundary() {
         return new Rectangle2D(ballx, bally, ballwidth, ballheight);
     }
 
+    /**
+     * takes in a rectangle and returns a rectangle2D
+     * @param x - Rectangle
+     * @return Rectangle2D
+     */
     public Rectangle2D getRecBoundary(Rectangle x) {
         return new Rectangle2D(x.getLayoutX(), x.getLayoutY(), x.getWidth(), x.getHeight());
     }
 
+    /**
+     * Checks to see if the main image/object intersected with a passed in image.
+     * @param x - Imageview
+     * @return boolean
+     */
     public boolean collide(ImageView x) {
         return perGetBoundary().intersects(getBoundary(x));
     }
 
+    /**
+     * checks to see if main image/object intersects with a Rectangle
+     * @param x - Rectangle
+     * @return boolean
+     */
     public boolean collideRec(Rectangle x) {
         return perGetBoundary().intersects(getRecBoundary(x));
     }
 
+    /**
+     * Makes the image 'exit' into a Rectangle2D
+     * @return boolean
+     */
     public Rectangle2D exitSign() {
         return new Rectangle2D(exitx, exity, exitwidth, exitheight);
     }
 
+    /**
+     * Checks to see if main image intersects with a Rectangle
+     * @param x - Rectangle
+     * @return boolean
+     */
     public boolean IntersectRec(Rectangle x) {
         return personColideRec().intersects(x.getBoundsInParent());
     }
 
+    /**
+     * takes in main image/object x, y , width & height and turns it into a Rectangle
+     * @return Rectangle
+     */
     public Rectangle personColideRec() {
         return new Rectangle(ballx, bally, ballwidth, ballheight);
     }
 
-
+    /**
+     * Allows usesr to use arrow keys and space bar to move and pick up stuff
+     * @param e - input of keys
+     */
     @Override
     public void handle(KeyEvent e) {
 
@@ -445,6 +488,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
+    /**
+     * Calls the win or loose screen if money is true.
+     * @throws Exception
+     */
     public void checkWin() throws Exception {
         if (sell.checkMoney()) {
             win();
@@ -455,6 +502,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         }
     }
 
+    /**
+     * Calls the winning screen if the cox painting is found
+     * @throws Exception
+     */
     public void winCox () throws Exception {
         stopMusic(); //stop music
 
@@ -466,6 +517,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         MainGameS1.Gamestage.close();
     }
 
+    /**
+     * Calls the win screen
+     * @throws Exception
+     */
     public void win () throws Exception {
         stopMusic();
 
@@ -479,6 +534,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
+    /**
+     * calls the loosing screen
+     * @throws Exception
+     */
     public void loose () throws Exception {
         stopMusic();
 
@@ -492,6 +551,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     }
 
+    /**
+     * plays music on repeat
+     */
     public void playMusic(){
         mediaPlayer.setOnEndOfMedia(new Runnable(){
             @Override
@@ -501,6 +563,10 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         });
         mediaPlayer.play();
     }
+
+    /**
+     * stops the music from playing
+     */
     public void stopMusic(){
         mediaPlayer.stop();
     }

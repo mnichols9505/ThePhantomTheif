@@ -39,8 +39,6 @@ public class CountDown extends Application {
 
     Group root = new Group();
 
-
-
     public Stage secondStage = new Stage();
 
     public Timeline time = new Timeline();
@@ -57,6 +55,9 @@ public class CountDown extends Application {
         stage.show();
     }
 
+    /**
+     * Starts the 90 sec clock
+     */
     public void doTime() {
         System.out.println(secondStage+"!!");
         time.setCycleCount(Timeline.INDEFINITE);
@@ -92,6 +93,10 @@ public class CountDown extends Application {
 
         secondStage.show();
     }
+
+    /**
+     * starts the 30 second clock
+     */
     public void doHardTime() {
 
         HBox hbox = new HBox(5);
@@ -136,6 +141,9 @@ public class CountDown extends Application {
 
     }
 
+    /**
+     * closes the main game screen when you lose
+     */
     public void close() {
 
             Stage stage = (Stage) label.getScene().getWindow();
@@ -149,6 +157,10 @@ public class CountDown extends Application {
             }
 
     }
+
+    /**
+     * Makes a clock that counts down. If seconds is less then or equal to 0, it calls the close method and prompts the loser screen.
+     */
     public void clock() {
         seconds--;
 
@@ -161,6 +173,10 @@ public class CountDown extends Application {
 
         }
     }
+
+    /**
+     * closes the stage of countdown
+     */
     public void closeStage() {
         secondStage.close();
     }
