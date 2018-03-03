@@ -27,7 +27,7 @@ import java.awt.*;
 
 
 public class CountDown extends Application {
-    private boolean poison;
+
     private Label label;
     private Integer start = 93;
     private Integer seconds = start;
@@ -35,20 +35,15 @@ public class CountDown extends Application {
     private Integer secondsHard = startHard;
     private Integer startStart = 3;
     private Integer secondsStart = startStart;
-    private Label timerLabel;
+
 
     Group root = new Group();
+
+
+
     public Stage secondStage = new Stage();
 
     public Timeline time = new Timeline();
-
-    public boolean isPoison() {
-        return poison;
-    }
-
-    public void setPoison(boolean poison) {
-        this.poison = poison;
-    }
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -63,7 +58,7 @@ public class CountDown extends Application {
     }
 
     public void doTime() {
-        poison = true;
+        System.out.println(secondStage+"!!");
         time.setCycleCount(Timeline.INDEFINITE);
         if (time != null) {
             time.stop();
@@ -78,7 +73,6 @@ public class CountDown extends Application {
         time.getKeyFrames().add(frame);
         time.playFromStart();
         time.play();
-        Stage secondStage = new Stage();
         label = new Label();
         label.setTextFill(Color.WHITESMOKE);
         label.setFont(Font.font(22));
@@ -99,7 +93,7 @@ public class CountDown extends Application {
         secondStage.show();
     }
     public void doHardTime() {
-        poison = true;
+
         HBox hbox = new HBox(5);
 
         time.setCycleCount(Timeline.INDEFINITE);
@@ -116,7 +110,7 @@ public class CountDown extends Application {
                 }
                 if (secondsHard <= 0) {
                     time.stop();
-                    close(true);
+                    close();
                     secondStage.close();
 
                 }
@@ -142,78 +136,33 @@ public class CountDown extends Application {
 
     }
 
-    public void do3Time() {
+    public void close() {
 
-
-        HBox hbox = new HBox(5);
-
-        time.setCycleCount(Timeline.INDEFINITE);
-        if (time != null) {
-            time.stop();
-        }
-        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                secondsStart--;
-
-                if (label != null) {
-                    label.setText("READY?: " + secondsStart.toString());
-                }
-                if (secondsStart <= 0) {
-                    time.stop();
-                    secondStage.close();
-                    CharacterMove cm = new CharacterMove();
-
-                }
-            }
-
-        });
-        time.getKeyFrames().add(frame);
-        time.playFromStart();
-        time.play();
-        secondStage.getIcons().add(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Emoji_u1f319.svg/2000px-Emoji_u1f319.svg.png"));
-        label = new Label();
-        label.setTextFill(Color.WHITESMOKE);
-        label.setFont(Font.font(120));
-        secondStage.setTitle("READY?");
-        secondStage.setX(700);
-        secondStage.setY(630);
-        hbox.getChildren().add(label);
-        root.getChildren().add(hbox);
-        hbox.setAlignment(Pos.BOTTOM_RIGHT);
-        secondStage.setScene(new Scene(root, 800, 200, Color.DARKSALMON));
-        secondStage.show();
-
-
-    }
-    public void close(boolean x) {
-        if (x) {
             Stage stage = (Stage) label.getScene().getWindow();
             stage.close();
+            MainGameS1.Gamestage.close();
             Looser looser = new Looser();
-            MainGameS1 gameS1 = new MainGameS1();
             try {
-                gameS1.gameClose();
                 looser.start(Looser.lose);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else {
 
-        }
     }
     public void clock() {
         seconds--;
-
 
         if (label != null) {
             label.setText("Countdown: " + seconds.toString());
         }
         if (seconds <= 0) {
             time.stop();
-            close(true);
+            close();
 
         }
+    }
+    public void closeStage() {
+        secondStage.close();
     }
 
     }

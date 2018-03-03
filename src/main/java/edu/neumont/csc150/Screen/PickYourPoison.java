@@ -21,6 +21,7 @@ public class PickYourPoison extends Application{
     static Stage levelPick = new Stage();
     static Stage Timer = new Stage();
     StartCountDown s = new StartCountDown();
+    CountDown countDown = new CountDown();
 
 
 
@@ -57,13 +58,11 @@ public class PickYourPoison extends Application{
     Button gameButton1;
 
     public void gameClick(MouseEvent event) throws Exception {
-        CountDown easy = new CountDown();
-        easy.doTime();
+        MainGameS1 game= new MainGameS1(countDown);
+        countDown.doTime();
         Stage stage = (Stage) gameButton.getScene().getWindow();
-        CountDown c = new CountDown();
-        easy.setPoison(true);
         stage.close();
-        MainGameS1 game= new MainGameS1();
+
         game.start(MainGameS1.Gamestage);
         s.start(StartCountDown.secondStage3);
 
@@ -73,13 +72,10 @@ public class PickYourPoison extends Application{
     }
 
     public void gameClickHard(MouseEvent event) throws Exception {
-        CountDown hard = new CountDown();
-        hard.doHardTime();
+        countDown.doHardTime();
         Stage stage = (Stage) gameButton.getScene().getWindow();
-        CountDown c = new CountDown();
-        hard.setPoison(false);
         stage.close();
-        MainGameS1 game= new MainGameS1();
+        MainGameS1 game= new MainGameS1(countDown);
         game.start(MainGameS1.Gamestage);
         s.start(StartCountDown.secondStage3);
     }

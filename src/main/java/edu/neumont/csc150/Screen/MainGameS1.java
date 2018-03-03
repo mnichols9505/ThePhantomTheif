@@ -25,15 +25,21 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import sun.applet.Main;
 
 import java.io.File;
 import java.net.URL;
 
 public class MainGameS1 extends Application {
 
-    static Stage Gamestage = new Stage();
+    public static Stage Gamestage = new Stage();
+    public static CountDown easy;
+
 
     String musicFile = "title.mp3";
+    public MainGameS1 (CountDown countDown){
+        this.easy = countDown;
+    }
 
     public void start(Stage stage) throws Exception {
 
@@ -73,6 +79,13 @@ public class MainGameS1 extends Application {
         stage.close();
     }
     //
+    public CountDown getEasy() {
+        return easy;
+    }
+
+    public void setEasy(CountDown easy) {
+        this.easy = easy;
+    }
 
 }
 

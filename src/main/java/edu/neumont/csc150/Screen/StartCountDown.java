@@ -73,11 +73,6 @@ public class StartCountDown extends Application{
 
 
 
-
-
-        System.out.println(secondStage3 + "!!");
-
-
     }
     }
 
