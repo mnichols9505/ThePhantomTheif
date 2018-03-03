@@ -20,7 +20,7 @@ import java.io.File;
 public class StartScreen extends Application {
 
     static Stage startstage = new Stage();
-    String file = "title.mp3";
+  //  String file = "title.mp3";
 
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("fxml/startmenu.fxml"));

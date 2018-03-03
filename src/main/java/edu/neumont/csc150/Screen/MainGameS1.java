@@ -36,7 +36,7 @@ public class MainGameS1 extends Application {
     public static CountDown easy;
 
 
-    String musicFile = "title.mp3";
+
     public MainGameS1 (CountDown countDown){
         this.easy = countDown;
     }
@@ -61,16 +61,6 @@ public class MainGameS1 extends Application {
         scene.setOnKeyPressed(dude);
         dude.init();
 
-        Media sound = new Media(new File(musicFile).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setOnEndOfMedia(new Runnable(){
-            @Override
-            public void run() {
-                mediaPlayer.seek(Duration.ZERO);
-            }
-        });
-
-        mediaPlayer.play();
 
     }
 

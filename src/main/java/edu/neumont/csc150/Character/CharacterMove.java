@@ -23,6 +23,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -30,6 +32,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -37,7 +40,7 @@ import static edu.neumont.csc150.Screen.WinScreen.win;
 
 
 public class CharacterMove implements EventHandler <KeyEvent> {
- //   private CountDown c = new CountDown();
+    //   private CountDown c = new CountDown();
 
     @FXML
     private Canvas mainCanvas;
@@ -54,6 +57,11 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     private int exity = 536, exitx = 410, exitwidth = 164, exitheight = 45;
     private Image e = new Image("Images/Exit.png", exitwidth, exitheight, true, true);
     private ImageView exit = new ImageView(e);
+
+    private String musicFile = "title.mp3";
+    Media sound = new Media(new File(musicFile).toURI().toString());
+    MediaPlayer mediaPlayer = new MediaPlayer(sound);
+
 
 
     @FXML
@@ -101,6 +109,7 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         money.setTextFill(Color.GREEN);
         money.setStyle("-fx-font: 26 arial;");
 
+
     }
 
     private void makeItem() {
@@ -124,6 +133,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
 
     public void init() {
         makeItem();
+        //playMusic(); //plays music
+
         Timeline timer = new Timeline(new KeyFrame(Duration.millis(10), e -> {
             try {
                 draw();
@@ -137,6 +148,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     }
 
     public void draw() throws Exception {
+
+
         GraphicsContext gc = mainCanvas.getGraphicsContext2D();
 
         gc.setFill(Color.rgb(40, 13, 75));
@@ -392,43 +405,43 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     @Override
     public void handle(KeyEvent e) {
 
-                if (e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
+        if (e.getCode().equals(KeyCode.UP) || e.getCode().equals(KeyCode.W)) {
 
-                    System.out.println("UP key was pressed");
-                    this.checkbounce();
-                    bally -= vY;
+            System.out.println("UP key was pressed");
+            this.checkbounce();
+            bally -= vY;
 
-                }
-                if (e.getCode().equals(KeyCode.DOWN) || e.getCode().equals(KeyCode.S)) {
-                    System.out.println("Down key was pressed");
+        }
+        if (e.getCode().equals(KeyCode.DOWN) || e.getCode().equals(KeyCode.S)) {
+            System.out.println("Down key was pressed");
 
-                    this.checkbounce();
-                    bally += vY;
-
-
-                }
-                if (e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)) {
-                    System.out.println("Left key was pressed");
-
-                    this.checkbounce();
-                    ballx -= vX;
+            this.checkbounce();
+            bally += vY;
 
 
-                }
-                if (e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)) {
-                    System.out.println("Right key was pressed");
+        }
+        if (e.getCode().equals(KeyCode.LEFT) || e.getCode().equals(KeyCode.A)) {
+            System.out.println("Left key was pressed");
 
-                    this.checkbounce();
-                    ballx += vX;
+            this.checkbounce();
+            ballx -= vX;
 
 
-                }
+        }
+        if (e.getCode().equals(KeyCode.RIGHT) || e.getCode().equals(KeyCode.D)) {
+            System.out.println("Right key was pressed");
 
-                if (e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
-                    System.out.println("Space key was pressed");
-                    pickup();
+            this.checkbounce();
+            ballx += vX;
 
-                }
+
+        }
+
+        if (e.getCode().equals(KeyCode.SPACE) || e.getCode().equals(KeyCode.D)) {
+            System.out.println("Space key was pressed");
+            pickup();
+
+        }
 
     }
 
@@ -443,6 +456,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     }
 
     public void winCox () throws Exception {
+        stopMusic(); //stop music
+
         CoxFound coxFound = new CoxFound();
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
@@ -452,6 +467,8 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     }
 
     public void win () throws Exception {
+        stopMusic();
+
         WinScreen winScreen = new WinScreen();
         Stage stage = (Stage) this.recttwo.getScene().getWindow();
         stage.close();
@@ -463,13 +480,29 @@ public class CharacterMove implements EventHandler <KeyEvent> {
     }
 
     public void loose () throws Exception {
+        stopMusic();
+
         Looser looser = new Looser();
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         looser.start(Looser.lose);
         MainGameS1.easy.closeStage();
         MainGameS1.Gamestage.close();
-    //    this.c.secondStageHard.close();
+        //    this.c.secondStageHard.close();
 
     }
+
+    public void playMusic(){
+        mediaPlayer.setOnEndOfMedia(new Runnable(){
+            @Override
+            public void run() {
+                mediaPlayer.seek(Duration.ZERO);
+            }
+        });
+        mediaPlayer.play();
+    }
+    public void stopMusic(){
+        mediaPlayer.stop();
+    }
+
 }
