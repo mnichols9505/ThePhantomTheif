@@ -1,7 +1,9 @@
 package edu.neumont.csc150.Items;
 
 public class CoxPainting extends Cash {
-
+    /**
+     * default contructor
+     */
     public CoxPainting() {
         super(10000,"Images/Mr.Cox.PNG");
     }

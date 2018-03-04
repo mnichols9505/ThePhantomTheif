@@ -10,10 +10,16 @@ import javafx.stage.Stage;
 public class Start extends Application {
 
     static Stage startstage = new Stage();
+
     public static void main(String[] args) {
         Application.launch(Start.class, args);
     }
 
+    /**
+     * Start the screen
+     * @param stage
+     * @throws Exception
+     */
     public void start(Stage stage) throws Exception {
 
         StartScreen sc = new StartScreen();

@@ -8,6 +8,10 @@ public class Sell {
 
         public int accumulator = 0;
 
+    /**
+     * checks money to see if it is 10000
+     * @return boolean
+     */
     public boolean checkMoney() {
         if (getAccumulator() >= 10000){
             return true;
@@ -18,15 +22,26 @@ public class Sell {
         return false;
     }
 
+    /**
+     * returns the sum of total Money gained
+     * @return
+     */
     public int sumValue() {
                 return this.getAccumulator();
         }
 
-
+    /**
+     * getter for Accumlator
+     * @return
+     */
     public int getAccumulator() {
         return accumulator;
     }
 
+    /**
+     * adds money to accumlator
+     * @param x - int
+     */
     public void addMoney(int x){
         this.accumulator += x;
     }

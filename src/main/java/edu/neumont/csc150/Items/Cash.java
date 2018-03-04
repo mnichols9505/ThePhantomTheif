@@ -7,11 +7,18 @@ public abstract class Cash extends CurrencyPiece{
 
     private Image image;
 
+    /**
+     * Default constructor
+     */
     public Cash() {
 
     }
 
-
+    /**
+     * Constuctor to set image
+     * @param value - int
+     * @param imageURL - String
+     */
     public Cash(int value, String imageURL) {
         super(value);
 
@@ -20,10 +27,18 @@ public abstract class Cash extends CurrencyPiece{
 
     }
 
+    /**
+     * Getter for Image
+     * @return
+     */
     public Image getImage() {
         return image;
     }
 
+    /**
+     * setter for Image
+     * @param image
+     */
     public void setImage(Image image) {
         this.image = image;
     }

@@ -6,18 +6,33 @@ abstract public class CurrencyPiece implements Comparable<CurrencyPiece> {
 
     private int value;
 
+    /**
+     * Default constructor
+     */
     public CurrencyPiece() {
 
     }
 
+    /**
+     * constructor
+     * @param value - int
+     */
     public CurrencyPiece(int value) {
         this.setValue(value);
     }
 
+    /**
+     * getter for value
+     * @return
+     */
     public int getValue() {
         return value;
     }
 
+    /**
+     * setter for value
+     * @param value
+     */
     public void setValue(int value) {
         int allowedDenomination = getAllowedDenomination();
         if (value != allowedDenomination) {

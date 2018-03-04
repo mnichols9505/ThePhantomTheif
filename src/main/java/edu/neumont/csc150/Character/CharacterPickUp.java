@@ -13,6 +13,9 @@ public class CharacterPickUp{
         this.makeItem();
     }
 
+    /**
+     * intlizes all the items
+     */
     public void makeItem(){
 
         //Automatic - $10,000 index 0
@@ -36,10 +39,18 @@ public class CharacterPickUp{
 
     }
 
+    /**
+     * getter for Items
+     * @return
+     */
     public List<Cash> getItems() {
         return items;
     }
 
+    /**
+     * Setter for Items
+     * @param items
+     */
     public void setItems(List<Cash> items) {
         this.items = items;
     }
