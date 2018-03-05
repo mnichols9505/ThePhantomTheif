@@ -31,6 +31,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import sun.applet.Main;
 
 import java.io.File;
 import java.io.IOException;
@@ -513,6 +514,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         coxFound.start(CoxFound.cox);
+
+        MainGameS1.easy.time.stop();
+
         MainGameS1.easy.closeStage();
         MainGameS1.Gamestage.close();
     }
@@ -528,6 +532,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         Stage stage = (Stage) this.recttwo.getScene().getWindow();
         stage.close();
         winScreen.start(WinScreen.win);
+
+        MainGameS1.easy.time.stop();
+
         MainGameS1.easy.closeStage();
         MainGameS1.Gamestage.close();
 
@@ -545,6 +552,9 @@ public class CharacterMove implements EventHandler <KeyEvent> {
         Stage stage = (Stage) this.rectthree.getScene().getWindow();
         stage.close();
         looser.start(Looser.lose);
+
+        MainGameS1.easy.time.stop();
+
         MainGameS1.easy.closeStage();
         MainGameS1.Gamestage.close();
         //    this.c.secondStageHard.close();

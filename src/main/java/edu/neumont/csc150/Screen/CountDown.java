@@ -178,6 +178,7 @@ public class CountDown extends Application {
      * closes the stage of countdown
      */
     public void closeStage() {
+
         secondStage.close();
     }
 
