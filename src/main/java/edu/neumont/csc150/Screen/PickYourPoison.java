@@ -1,6 +1,5 @@
 package edu.neumont.csc150.Screen;
 
-import edu.neumont.csc150.Character.CharacterMove;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
