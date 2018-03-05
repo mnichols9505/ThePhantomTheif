@@ -75,6 +75,7 @@ public class PickYourPoison extends Application {
         Stage stage = (Stage) gameButton.getScene().getWindow();
         stage.close();
 
+
         game.start(MainGameS1.Gamestage);
         s.start(StartCountDown.secondStage3);
 

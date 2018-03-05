@@ -64,8 +64,6 @@ public class PhantomController implements EventHandler <KeyEvent> {
     private Media sound = new Media(new File(musicFile).toURI().toString());
     private MediaPlayer mediaPlayer = new MediaPlayer(sound);
 
-
-
     @FXML
     private Label money;
 
@@ -500,6 +498,7 @@ public class PhantomController implements EventHandler <KeyEvent> {
         if (sell.checkMoney()) {
             win();
 
+
         } else {
             loose();
 
@@ -522,6 +521,8 @@ public class PhantomController implements EventHandler <KeyEvent> {
 
         MainGameS1.easy.closeStage();
         MainGameS1.Gamestage.close();
+
+
     }
 
     /**
@@ -542,6 +543,8 @@ public class PhantomController implements EventHandler <KeyEvent> {
         MainGameS1.Gamestage.close();
 
 
+
+
     }
 
     /**
@@ -560,7 +563,7 @@ public class PhantomController implements EventHandler <KeyEvent> {
 
         MainGameS1.easy.closeStage();
         MainGameS1.Gamestage.close();
-        //    this.c.secondStageHard.close();
+
 
     }
 

@@ -43,23 +43,11 @@ public class StartScreen extends Application {
 
         startstage.show();
 
-//        Media music = new Media(new File(file).toURI().toString());
-//        MediaPlayer player = new MediaPlayer(music);
-//        player.setOnEndOfMedia(new Runnable() {
-//            @Override
-//            public void run() {
-//                player.play();
-//            }
-//        });
-//        player.play();
-
     }
 
     @FXML
     Button startButton;
 
-    @FXML
-    private Label timerLabel;
 
     /**
      * When start is clicked, the title window closes and brings up the level screen.
