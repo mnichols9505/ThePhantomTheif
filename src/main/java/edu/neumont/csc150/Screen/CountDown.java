@@ -25,7 +25,10 @@ import sun.applet.AppletListener;
 
 import java.awt.*;
 
-
+/**
+ * is the controller for the timer for the game
+ * @author Ashley, Marisol, Matthew
+ */
 public class CountDown extends Application {
 
     private Label label;

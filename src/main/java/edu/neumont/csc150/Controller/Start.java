@@ -7,6 +7,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * when ran it runs the start screen
+ * @author Ashley, Marisol, Matthew
+ */
 public class Start extends Application {
 
     static Stage startstage = new Stage();

@@ -10,6 +10,10 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+ * sets the stage when the Mr. cox painting is found
+ * @author Ashley, Marisol, Matthew
+ */
 public class CoxFound extends Application {
 
 

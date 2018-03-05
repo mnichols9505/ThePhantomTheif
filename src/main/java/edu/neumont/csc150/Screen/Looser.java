@@ -12,6 +12,10 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 
+/**
+ * is the controller for the loose screen
+ * @author Ashley, Marisol, Matthew
+ */
 public class Looser extends Application {
 
     public static Stage lose = new Stage();

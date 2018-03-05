@@ -1,5 +1,9 @@
 package edu.neumont.csc150.Items;
 
+/**
+ * sets valueof the Mr. Cox painting
+ * @author Ashley, Marisol, Matthew
+ */
 public class CoxPainting extends Cash {
     /**
      * default contructor

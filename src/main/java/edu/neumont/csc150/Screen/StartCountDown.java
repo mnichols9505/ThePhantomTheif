@@ -17,6 +17,10 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+/**
+ * Controller to start the countdown screen to start the game
+ * @author Ashley, Marisol, Matthew
+ */
 public class StartCountDown extends Application{
 
     private Label label;

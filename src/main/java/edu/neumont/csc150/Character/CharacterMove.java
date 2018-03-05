@@ -39,7 +39,10 @@ import java.util.ArrayList;
 
 import static edu.neumont.csc150.Screen.WinScreen.win;
 
-
+/**
+ * controls everything that happens in the game screen
+ * @author Ashley, Marisol, Matthew
+ */
 public class CharacterMove implements EventHandler <KeyEvent> {
 
     @FXML

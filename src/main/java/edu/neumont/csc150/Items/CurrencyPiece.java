@@ -2,6 +2,10 @@ package edu.neumont.csc150.Items;
 
 import java.io.Serializable;
 
+/**
+ * is the parent of both cash and sell and sets the value of items
+ * @author Ashley, Marisol, Matthew
+ */
 abstract public class CurrencyPiece implements Comparable<CurrencyPiece> {
 
     private int value;

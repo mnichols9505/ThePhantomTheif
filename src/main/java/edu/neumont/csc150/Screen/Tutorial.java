@@ -12,6 +12,10 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 
+/**
+ * controller for the tutorial screen
+ * @author Ashley, Marisol, Matthew
+ */
 public class Tutorial extends Application{
 
 static Stage tutstage = new Stage();

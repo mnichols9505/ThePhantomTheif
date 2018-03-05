@@ -1,5 +1,9 @@
 package edu.neumont.csc150.Items;
 
+/**
+ * sets the value of the sculpture
+ * @author Ashley, Marisol, Matthew
+ */
 public class Sculpture extends Cash{
 
     /**

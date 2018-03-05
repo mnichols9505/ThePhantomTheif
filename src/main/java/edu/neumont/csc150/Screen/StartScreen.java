@@ -16,7 +16,10 @@ import javafx.util.Duration;
 
 import java.io.File;
 
-
+/**
+ * is the controller for the start screen
+ * @author Ashley, Marisol, Matthew
+ */
 public class StartScreen extends Application {
 
     static Stage startstage = new Stage();

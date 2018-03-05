@@ -16,6 +16,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+/**
+ * controller for the level picking sceen of the game
+ * @author Ashley, Marisol, Matthew
+ */
 public class PickYourPoison extends Application {
 
     private Label label;

@@ -5,6 +5,10 @@ import edu.neumont.csc150.Items.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * intitalizes items array
+ * @author Ashley, Marisol, Matthew
+ */
 public class CharacterPickUp{
 
     private List<Cash> items = new ArrayList<>();

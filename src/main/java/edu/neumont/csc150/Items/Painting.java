@@ -1,5 +1,9 @@
 package edu.neumont.csc150.Items;
 
+/**
+ * sets the value of a painting when picked up
+ * @author Ashley, Marisol, Matthew
+ */
 public class Painting extends Cash{
     /**
      * default constructor

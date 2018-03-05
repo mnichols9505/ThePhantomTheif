@@ -10,6 +10,10 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+ * controller for the normal win screen
+ * @author Ashley, Marisol, Matthew
+ */
 public class WinScreen extends Application{
 
     public static Stage win = new Stage();

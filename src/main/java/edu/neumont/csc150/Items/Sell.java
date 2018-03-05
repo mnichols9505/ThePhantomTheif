@@ -3,6 +3,10 @@ package edu.neumont.csc150.Items;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * adds the items together to reach the goal of $10000
+ * @author Ashley, Marisol, Matthew
+ */
 public class Sell {
         private static final long serialVersionUID = 1L;
 

@@ -30,6 +30,10 @@ import sun.applet.Main;
 import java.io.File;
 import java.net.URL;
 
+/**
+ * controller to start the game
+ * @author Ashley, Marisol, Matthew
+ */
 public class MainGameS1 extends Application {
 
     public static Stage Gamestage = new Stage();

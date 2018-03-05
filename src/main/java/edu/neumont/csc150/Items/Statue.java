@@ -1,5 +1,9 @@
 package edu.neumont.csc150.Items;
 
+/**
+ * sets value when a statue is picked up
+ * @author Ashley, Marisol, Matthew
+ */
 public class Statue extends Cash {
 
     /**
